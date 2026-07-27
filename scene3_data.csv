@@ -1,0 +1,802 @@
+Country Name,Country Code,Year,Progression,SlumPopulation,Region
+Albania,ALB,2000,97.25,28.1,Europe & Central Asia
+Argentina,ARG,2000,97.69,20.29,Latin America & Caribbean
+Azerbaijan,AZE,2000,98.23,50.94,Europe & Central Asia
+Belize,BLZ,2000,94.41,15.8,Latin America & Caribbean
+Benin,BEN,2000,98.97,71.87,Sub-Saharan Africa
+Bhutan,BTN,2000,93.51,57.6,South Asia
+Botswana,BWA,2000,95.92,58.69,Sub-Saharan Africa
+Brazil,BRA,2000,97.88,34.74,Latin America & Caribbean
+Bulgaria,BGR,2000,99.34,0.05,Europe & Central Asia
+Burkina Faso,BFA,2000,61.96,82.21,Sub-Saharan Africa
+Cambodia,KHM,2000,78.61,84.8,East Asia & Pacific
+Chad,TCD,2000,75.69,91.58,Sub-Saharan Africa
+Colombia,COL,2000,92.34,21.18,Latin America & Caribbean
+Costa Rica,CRI,2000,82.92,12.7,Latin America & Caribbean
+Cote d'Ivoire,CIV,2000,67.47,67.08,Sub-Saharan Africa
+Croatia,HRV,2000,99.74,0.4,Europe & Central Asia
+Cuba,CUB,2000,97.4,2.15,Latin America & Caribbean
+Cyprus,CYP,2000,99.53,0.2,Europe & Central Asia
+Czechia,CZE,2000,99.97,0.05,Europe & Central Asia
+Djibouti,DJI,2000,79.95,76.74,Middle East & North Africa
+Ecuador,ECU,2000,70.25,57.41,Latin America & Caribbean
+"Egypt, Arab Rep.",EGY,2000,93.33,42.23,Middle East & North Africa
+El Salvador,SLV,2000,93.21,1.9,Latin America & Caribbean
+Eritrea,ERI,2000,86.32,76.74,Sub-Saharan Africa
+Estonia,EST,2000,99.85,0.05,Europe & Central Asia
+Eswatini,SWZ,2000,83.88,55.35,Sub-Saharan Africa
+Fiji,FJI,2000,98.36,2.22,East Asia & Pacific
+Finland,FIN,2000,99.84,0.0,Europe & Central Asia
+"Gambia, The",GMB,2000,71.71,56.92,Sub-Saharan Africa
+Georgia,GEO,2000,98.42,13.6,Europe & Central Asia
+Germany,DEU,2000,99.9,0.0,Europe & Central Asia
+Ghana,GHA,2000,85.34,60.37,Sub-Saharan Africa
+Guatemala,GTM,2000,94.43,55.5,Latin America & Caribbean
+Guinea,GIN,2000,76.98,40.67,Sub-Saharan Africa
+Hungary,HUN,2000,99.99,15.4,Europe & Central Asia
+Iceland,ISL,2000,99.88,0.0,Europe & Central Asia
+"Iran, Islamic Rep.",IRN,2000,92.32,57.6,Middle East & North Africa
+Italy,ITA,2000,99.78,0.02,Europe & Central Asia
+Kazakhstan,KAZ,2000,98.93,24.46,Europe & Central Asia
+Kuwait,KWT,2000,99.62,0.0,Middle East & North Africa
+Kyrgyz Republic,KGZ,2000,98.59,47.16,Europe & Central Asia
+Lao PDR,LAO,2000,77.86,54.4,East Asia & Pacific
+Latvia,LVA,2000,99.47,2.85,Europe & Central Asia
+Lesotho,LSO,2000,68.5,62.73,Sub-Saharan Africa
+Lithuania,LTU,2000,99.77,4.15,Europe & Central Asia
+Madagascar,MDG,2000,62.6,91.44,Sub-Saharan Africa
+Malawi,MWI,2000,87.62,81.41,Sub-Saharan Africa
+Mali,MLI,2000,77.94,83.88,Sub-Saharan Africa
+Malta,MLT,2000,98.47,0.04,Middle East & North Africa
+Mauritius,MUS,2000,80.76,76.74,Sub-Saharan Africa
+Mexico,MEX,2000,90.63,32.16,Latin America & Caribbean
+Moldova,MDA,2000,98.05,26.5,Europe & Central Asia
+Mongolia,MNG,2000,97.21,57.6,East Asia & Pacific
+Morocco,MAR,2000,87.85,33.15,Middle East & North Africa
+Myanmar,MMR,2000,66.13,29.4,East Asia & Pacific
+Nepal,NPL,2000,79.65,66.31,South Asia
+Niger,NER,2000,49.91,70.04,Sub-Saharan Africa
+North Macedonia,MKD,2000,98.82,1.3,Europe & Central Asia
+Norway,NOR,2000,99.92,0.0,Europe & Central Asia
+Oman,OMN,2000,99.91,4.25,Middle East & North Africa
+Paraguay,PRY,2000,92.84,42.03,Latin America & Caribbean
+Peru,PER,2000,97.55,47.41,Latin America & Caribbean
+Poland,POL,2000,100.0,2.1,Europe & Central Asia
+Romania,ROU,2000,99.46,0.0,Europe & Central Asia
+Russian Federation,RUS,2000,99.31,3.65,Europe & Central Asia
+Samoa,WSM,2000,97.77,4.55,East Asia & Pacific
+Senegal,SEN,2000,55.19,67.15,Sub-Saharan Africa
+Seychelles,SYC,2000,98.8,76.74,Sub-Saharan Africa
+Slovak Republic,SVK,2000,99.49,0.05,Europe & Central Asia
+Sweden,SWE,2000,99.92,0.3,Europe & Central Asia
+Switzerland,CHE,2000,99.94,0.0,Europe & Central Asia
+Syrian Arab Republic,SYR,2000,73.49,30.7,Middle East & North Africa
+Tanzania,TZA,2000,19.77,81.33,Sub-Saharan Africa
+Togo,TGO,2000,81.94,69.27,Sub-Saharan Africa
+Trinidad and Tobago,TTO,2000,97.41,11.06,Latin America & Caribbean
+Uganda,UGA,2000,43.94,80.9,Sub-Saharan Africa
+United Arab Emirates,ARE,2000,99.95,0.7,Middle East & North Africa
+Uruguay,URY,2000,81.47,23.7,Latin America & Caribbean
+Uzbekistan,UZB,2000,98.56,29.46,Europe & Central Asia
+Vanuatu,VUT,2000,44.93,4.55,East Asia & Pacific
+"Venezuela, RB",VEN,2000,98.71,27.82,Latin America & Caribbean
+Viet Nam,VNM,2000,93.42,45.32,East Asia & Pacific
+Argentina,ARG,2002,96.52,19.57,Latin America & Caribbean
+Armenia,ARM,2002,98.21,12.31,Europe & Central Asia
+Aruba,ABW,2002,99.83,0.0,Latin America & Caribbean
+Azerbaijan,AZE,2002,98.1,44.94,Europe & Central Asia
+Belize,BLZ,2002,98.62,15.76,Latin America & Caribbean
+Benin,BEN,2002,78.07,71.47,Sub-Saharan Africa
+Bermuda,BMU,2002,96.83,0.02,North America
+Botswana,BWA,2002,97.77,56.57,Sub-Saharan Africa
+Brazil,BRA,2002,96.9,31.43,Latin America & Caribbean
+Brunei Darussalam,BRN,2002,90.17,35.79,East Asia & Pacific
+Bulgaria,BGR,2002,98.22,0.1,Europe & Central Asia
+Burkina Faso,BFA,2002,61.23,76.65,Sub-Saharan Africa
+Cabo Verde,CPV,2002,87.73,68.63,Sub-Saharan Africa
+Cambodia,KHM,2002,84.81,79.2,East Asia & Pacific
+Chad,TCD,2002,83.55,90.46,Sub-Saharan Africa
+Comoros,COM,2002,80.22,65.09,Sub-Saharan Africa
+"Congo, Rep.",COG,2002,68.66,87.81,Sub-Saharan Africa
+Croatia,HRV,2002,99.89,0.4,Europe & Central Asia
+Cuba,CUB,2002,98.18,2.15,Latin America & Caribbean
+Cyprus,CYP,2002,99.44,0.2,Europe & Central Asia
+Czechia,CZE,2002,99.84,0.05,Europe & Central Asia
+Ecuador,ECU,2002,73.29,57.85,Latin America & Caribbean
+"Egypt, Arab Rep.",EGY,2002,93.29,36.72,Middle East & North Africa
+El Salvador,SLV,2002,97.18,49.5,Latin America & Caribbean
+Eritrea,ERI,2002,96.56,74.76,Sub-Saharan Africa
+Eswatini,SWZ,2002,84.81,55.35,Sub-Saharan Africa
+Finland,FIN,2002,99.84,0.0,Europe & Central Asia
+"Gambia, The",GMB,2002,91.61,55.12,Sub-Saharan Africa
+Georgia,GEO,2002,98.53,13.6,Europe & Central Asia
+Germany,DEU,2002,99.76,0.0,Europe & Central Asia
+Ghana,GHA,2002,90.57,57.01,Sub-Saharan Africa
+Guinea,GIN,2002,70.51,41.5,Sub-Saharan Africa
+Hungary,HUN,2002,99.87,14.2,Europe & Central Asia
+Iceland,ISL,2002,99.58,0.0,Europe & Central Asia
+Indonesia,IDN,2002,81.76,33.47,East Asia & Pacific
+"Iran, Islamic Rep.",IRN,2002,97.15,56.79,Middle East & North Africa
+Italy,ITA,2002,99.84,0.02,Europe & Central Asia
+Kazakhstan,KAZ,2002,99.55,21.67,Europe & Central Asia
+Kuwait,KWT,2002,99.18,0.0,Middle East & North Africa
+Kyrgyz Republic,KGZ,2002,98.42,42.69,Europe & Central Asia
+Lao PDR,LAO,2002,83.1,51.0,East Asia & Pacific
+Latvia,LVA,2002,99.8,2.75,Europe & Central Asia
+Lebanon,LBN,2002,95.03,92.4,Middle East & North Africa
+Lesotho,LSO,2002,78.36,62.73,Sub-Saharan Africa
+Lithuania,LTU,2002,99.32,3.7,Europe & Central Asia
+Madagascar,MDG,2002,64.77,89.03,Sub-Saharan Africa
+Mali,MLI,2002,77.36,79.68,Sub-Saharan Africa
+Malta,MLT,2002,99.67,0.04,Middle East & North Africa
+Marshall Islands,MHL,2002,86.57,2.2,East Asia & Pacific
+Mauritius,MUS,2002,81.65,74.76,Sub-Saharan Africa
+Mexico,MEX,2002,93.31,30.45,Latin America & Caribbean
+Moldova,MDA,2002,98.36,23.7,Europe & Central Asia
+Mongolia,MNG,2002,99.25,53.63,East Asia & Pacific
+Morocco,MAR,2002,87.45,30.37,Middle East & North Africa
+Myanmar,MMR,2002,70.08,32.61,East Asia & Pacific
+Nepal,NPL,2002,87.89,63.42,South Asia
+Niger,NER,2002,58.41,70.1,Sub-Saharan Africa
+North Macedonia,MKD,2002,97.83,1.3,Europe & Central Asia
+Norway,NOR,2002,99.75,0.0,Europe & Central Asia
+Oman,OMN,2002,99.32,4.0,Middle East & North Africa
+Paraguay,PRY,2002,92.13,39.03,Latin America & Caribbean
+Philippines,PHL,2002,97.94,48.57,East Asia & Pacific
+Poland,POL,2002,100.0,1.8,Europe & Central Asia
+Romania,ROU,2002,99.76,3.65,Europe & Central Asia
+Samoa,WSM,2002,97.47,4.55,East Asia & Pacific
+Senegal,SEN,2002,55.55,63.6,Sub-Saharan Africa
+Seychelles,SYC,2002,99.75,74.76,Sub-Saharan Africa
+Slovak Republic,SVK,2002,99.71,0.05,Europe & Central Asia
+South Africa,ZAF,2002,98.38,27.23,Sub-Saharan Africa
+Sri Lanka,LKA,2002,98.03,56.79,South Asia
+St. Lucia,LCA,2002,69.23,4.85,Latin America & Caribbean
+Switzerland,CHE,2002,99.82,0.0,Europe & Central Asia
+Syrian Arab Republic,SYR,2002,97.01,32.07,Middle East & North Africa
+Togo,TGO,2002,77.13,66.03,Sub-Saharan Africa
+Uganda,UGA,2002,43.24,78.21,Sub-Saharan Africa
+United Arab Emirates,ARE,2002,97.75,0.95,Middle East & North Africa
+Uruguay,URY,2002,83.43,23.7,Latin America & Caribbean
+Uzbekistan,UZB,2002,99.43,26.73,Europe & Central Asia
+"Venezuela, RB",VEN,2002,98.33,26.41,Latin America & Caribbean
+West Bank and Gaza,PSE,2002,99.07,30.0,Middle East & North Africa
+Argentina,ARG,2004,95.87,18.84,Latin America & Caribbean
+Armenia,ARM,2004,99.74,11.82,Europe & Central Asia
+Azerbaijan,AZE,2004,99.27,38.93,Europe & Central Asia
+Belize,BLZ,2004,98.06,15.76,Latin America & Caribbean
+Bermuda,BMU,2004,98.17,0.03,North America
+Bhutan,BTN,2004,98.5,55.97,South Asia
+Botswana,BWA,2004,99.03,54.45,Sub-Saharan Africa
+Brunei Darussalam,BRN,2004,96.98,34.13,East Asia & Pacific
+Bulgaria,BGR,2004,98.34,0.1,Europe & Central Asia
+Burkina Faso,BFA,2004,66.83,71.08,Sub-Saharan Africa
+Burundi,BDI,2004,58.18,77.04,Sub-Saharan Africa
+Cabo Verde,CPV,2004,93.74,66.26,Sub-Saharan Africa
+Cambodia,KHM,2004,84.4,73.6,East Asia & Pacific
+Cayman Islands,CYM,2004,98.68,4.15,Latin America & Caribbean
+Central African Republic,CAF,2004,76.44,80.28,Sub-Saharan Africa
+Chad,TCD,2004,66.62,89.33,Sub-Saharan Africa
+Colombia,COL,2004,99.62,18.49,Latin America & Caribbean
+"Congo, Rep.",COG,2004,70.11,84.69,Sub-Saharan Africa
+Costa Rica,CRI,2004,96.81,10.87,Latin America & Caribbean
+Cuba,CUB,2004,98.67,2.15,Latin America & Caribbean
+Cyprus,CYP,2004,99.68,0.2,Europe & Central Asia
+Czechia,CZE,2004,99.86,0.05,Europe & Central Asia
+Denmark,DNK,2004,99.69,0.0,Europe & Central Asia
+Djibouti,DJI,2004,91.35,72.36,Middle East & North Africa
+Ecuador,ECU,2004,78.59,57.8,Latin America & Caribbean
+Eritrea,ERI,2004,93.94,72.36,Sub-Saharan Africa
+Estonia,EST,2004,99.95,0.05,Europe & Central Asia
+Eswatini,SWZ,2004,95.3,55.35,Sub-Saharan Africa
+Ethiopia,ETH,2004,99.05,85.98,Sub-Saharan Africa
+Finland,FIN,2004,99.97,0.0,Europe & Central Asia
+"Gambia, The",GMB,2004,86.87,53.32,Sub-Saharan Africa
+Georgia,GEO,2004,97.94,13.21,Europe & Central Asia
+Germany,DEU,2004,99.82,0.0,Europe & Central Asia
+Ghana,GHA,2004,97.44,53.65,Sub-Saharan Africa
+Greece,GRC,2004,99.42,0.25,Europe & Central Asia
+Guatemala,GTM,2004,92.75,51.02,Latin America & Caribbean
+Guinea,GIN,2004,83.08,42.33,Sub-Saharan Africa
+Hungary,HUN,2004,99.66,12.9,Europe & Central Asia
+Iceland,ISL,2004,99.45,0.0,Europe & Central Asia
+Indonesia,IDN,2004,78.59,31.82,East Asia & Pacific
+"Iran, Islamic Rep.",IRN,2004,90.97,55.97,Middle East & North Africa
+Italy,ITA,2004,99.63,0.02,Europe & Central Asia
+Kazakhstan,KAZ,2004,99.92,18.89,Europe & Central Asia
+Kuwait,KWT,2004,96.82,0.0,Middle East & North Africa
+Kyrgyz Republic,KGZ,2004,99.08,38.21,Europe & Central Asia
+Lao PDR,LAO,2004,81.98,47.5,East Asia & Pacific
+Latvia,LVA,2004,99.4,2.4,Europe & Central Asia
+Lebanon,LBN,2004,95.76,92.4,Middle East & North Africa
+Lesotho,LSO,2004,74.31,58.6,Sub-Saharan Africa
+Lithuania,LTU,2004,99.27,3.3,Europe & Central Asia
+Madagascar,MDG,2004,73.44,86.63,Sub-Saharan Africa
+Malawi,MWI,2004,82.15,74.38,Sub-Saharan Africa
+Maldives,MDV,2004,92.18,41.54,South Asia
+Mali,MLI,2004,81.33,75.49,Sub-Saharan Africa
+Malta,MLT,2004,99.28,0.04,Middle East & North Africa
+Mauritania,MRT,2004,54.31,77.94,Sub-Saharan Africa
+Mauritius,MUS,2004,82.1,72.36,Sub-Saharan Africa
+Mexico,MEX,2004,94.29,28.73,Latin America & Caribbean
+Moldova,MDA,2004,98.76,20.8,Europe & Central Asia
+Mozambique,MOZ,2004,59.49,83.07,Sub-Saharan Africa
+Namibia,NAM,2004,91.59,42.26,Sub-Saharan Africa
+Niger,NER,2004,74.49,70.15,Sub-Saharan Africa
+North Macedonia,MKD,2004,99.56,1.3,Europe & Central Asia
+Norway,NOR,2004,99.86,0.0,Europe & Central Asia
+Pakistan,PAK,2004,71.83,68.17,Middle East & North Africa
+Panama,PAN,2004,65.31,40.05,Latin America & Caribbean
+Paraguay,PRY,2004,90.23,36.03,Latin America & Caribbean
+Peru,PER,2004,98.36,43.72,Latin America & Caribbean
+Philippines,PHL,2004,92.28,47.16,East Asia & Pacific
+Poland,POL,2004,100.0,1.55,Europe & Central Asia
+Romania,ROU,2004,99.65,3.65,Europe & Central Asia
+Samoa,WSM,2004,98.31,4.55,East Asia & Pacific
+Sao Tome and Principe,STP,2004,78.6,61.4,Sub-Saharan Africa
+Senegal,SEN,2004,64.53,60.04,Sub-Saharan Africa
+Seychelles,SYC,2004,99.89,72.36,Sub-Saharan Africa
+Slovak Republic,SVK,2004,99.96,0.05,Europe & Central Asia
+St. Lucia,LCA,2004,71.03,4.5,Latin America & Caribbean
+Switzerland,CHE,2004,99.85,0.0,Europe & Central Asia
+Syrian Arab Republic,SYR,2004,98.46,31.31,Middle East & North Africa
+Tanzania,TZA,2004,33.19,72.81,Sub-Saharan Africa
+Togo,TGO,2004,79.82,62.79,Sub-Saharan Africa
+Trinidad and Tobago,TTO,2004,95.77,11.06,Latin America & Caribbean
+Turkiye,TUR,2004,97.72,21.79,Europe & Central Asia
+Uganda,UGA,2004,41.69,75.52,Sub-Saharan Africa
+United Arab Emirates,ARE,2004,99.23,0.95,Middle East & North Africa
+Uruguay,URY,2004,82.04,23.68,Latin America & Caribbean
+Uzbekistan,UZB,2004,99.59,23.97,Europe & Central Asia
+"Venezuela, RB",VEN,2004,99.8,25.7,Latin America & Caribbean
+West Bank and Gaza,PSE,2004,99.24,30.0,Middle East & North Africa
+"Yemen, Rep.",YEM,2004,87.11,58.57,Middle East & North Africa
+Zambia,ZMB,2004,64.58,60.68,Sub-Saharan Africa
+Albania,ALB,2006,98.39,20.5,Europe & Central Asia
+Algeria,DZA,2006,93.24,30.8,Middle East & North Africa
+Argentina,ARG,2006,94.96,18.11,Latin America & Caribbean
+Armenia,ARM,2006,99.32,11.33,Europe & Central Asia
+Aruba,ABW,2006,97.76,0.0,Latin America & Caribbean
+Azerbaijan,AZE,2006,99.08,32.93,Europe & Central Asia
+Belize,BLZ,2006,94.93,15.75,Latin America & Caribbean
+Bhutan,BTN,2006,97.85,55.27,South Asia
+Botswana,BWA,2006,97.66,52.32,Sub-Saharan Africa
+Brunei Darussalam,BRN,2006,99.18,32.36,East Asia & Pacific
+Bulgaria,BGR,2006,97.72,0.1,Europe & Central Asia
+Burkina Faso,BFA,2006,66.92,65.51,Sub-Saharan Africa
+Cabo Verde,CPV,2006,92.81,63.83,Sub-Saharan Africa
+Cambodia,KHM,2006,81.57,67.9,East Asia & Pacific
+Cameroon,CMR,2006,44.92,55.56,Sub-Saharan Africa
+Cayman Islands,CYM,2006,91.78,4.15,Latin America & Caribbean
+Colombia,COL,2006,99.8,17.14,Latin America & Caribbean
+Costa Rica,CRI,2006,96.71,9.95,Latin America & Caribbean
+Cote d'Ivoire,CIV,2006,70.73,62.45,Sub-Saharan Africa
+Croatia,HRV,2006,99.58,0.35,Europe & Central Asia
+Cuba,CUB,2006,98.49,3.2,Latin America & Caribbean
+Cyprus,CYP,2006,99.15,0.25,Europe & Central Asia
+Czechia,CZE,2006,99.27,0.05,Europe & Central Asia
+Denmark,DNK,2006,96.76,0.0,Europe & Central Asia
+Dominican Republic,DOM,2006,98.83,23.07,Latin America & Caribbean
+Ecuador,ECU,2006,79.1,57.8,Latin America & Caribbean
+El Salvador,SLV,2006,95.01,46.49,Latin America & Caribbean
+Eritrea,ERI,2006,85.27,69.89,Sub-Saharan Africa
+Ethiopia,ETH,2006,95.47,82.89,Sub-Saharan Africa
+Finland,FIN,2006,99.91,0.0,Europe & Central Asia
+"Gambia, The",GMB,2006,96.76,51.51,Sub-Saharan Africa
+Georgia,GEO,2006,100.0,12.45,Europe & Central Asia
+Germany,DEU,2006,99.32,0.0,Europe & Central Asia
+Greece,GRC,2006,97.15,0.2,Europe & Central Asia
+Guatemala,GTM,2006,93.28,48.79,Latin America & Caribbean
+Guinea,GIN,2006,80.51,43.17,Sub-Saharan Africa
+Hungary,HUN,2006,99.62,11.6,Europe & Central Asia
+Iceland,ISL,2006,99.77,0.0,Europe & Central Asia
+Indonesia,IDN,2006,98.94,30.16,East Asia & Pacific
+"Iran, Islamic Rep.",IRN,2006,96.12,55.27,Middle East & North Africa
+Italy,ITA,2006,99.68,0.02,Europe & Central Asia
+Kazakhstan,KAZ,2006,99.99,16.11,Europe & Central Asia
+"Korea, Rep.",KOR,2006,98.86,12.8,East Asia & Pacific
+Kyrgyz Republic,KGZ,2006,99.01,33.74,Europe & Central Asia
+Lao PDR,LAO,2006,81.04,44.1,East Asia & Pacific
+Lebanon,LBN,2006,96.91,92.41,Middle East & North Africa
+Lesotho,LSO,2006,76.25,54.47,Sub-Saharan Africa
+Lithuania,LTU,2006,99.22,2.85,Europe & Central Asia
+Madagascar,MDG,2006,75.01,84.23,Sub-Saharan Africa
+Malawi,MWI,2006,84.89,70.87,Sub-Saharan Africa
+Mali,MLI,2006,86.33,71.29,Sub-Saharan Africa
+Malta,MLT,2006,97.58,0.04,Middle East & North Africa
+Marshall Islands,MHL,2006,93.47,2.0,East Asia & Pacific
+Mauritania,MRT,2006,60.79,74.56,Sub-Saharan Africa
+Mauritius,MUS,2006,86.32,69.89,Sub-Saharan Africa
+Mexico,MEX,2006,94.7,27.02,Latin America & Caribbean
+Moldova,MDA,2006,98.93,18.0,Europe & Central Asia
+Morocco,MAR,2006,86.57,24.79,Middle East & North Africa
+Mozambique,MOZ,2006,65.69,79.55,Sub-Saharan Africa
+Myanmar,MMR,2006,72.84,39.03,East Asia & Pacific
+Niger,NER,2006,52.62,70.21,Sub-Saharan Africa
+North Macedonia,MKD,2006,99.52,1.15,Europe & Central Asia
+Norway,NOR,2006,99.64,0.0,Europe & Central Asia
+Pakistan,PAK,2006,78.72,66.65,Middle East & North Africa
+Panama,PAN,2006,98.88,35.74,Latin America & Caribbean
+Paraguay,PRY,2006,88.37,33.04,Latin America & Caribbean
+Peru,PER,2006,97.96,41.87,Latin America & Caribbean
+Philippines,PHL,2006,98.05,45.76,East Asia & Pacific
+Poland,POL,2006,100.0,1.25,Europe & Central Asia
+Samoa,WSM,2006,98.2,3.9,East Asia & Pacific
+Senegal,SEN,2006,78.61,56.49,Sub-Saharan Africa
+Serbia,SRB,2006,99.57,0.6,Europe & Central Asia
+Slovak Republic,SVK,2006,99.34,0.05,Europe & Central Asia
+Sri Lanka,LKA,2006,99.45,55.27,South Asia
+Suriname,SUR,2006,55.0,9.94,Latin America & Caribbean
+Sweden,SWE,2006,99.91,0.25,Europe & Central Asia
+Switzerland,CHE,2006,99.77,0.0,Europe & Central Asia
+Syrian Arab Republic,SYR,2006,98.35,30.44,Middle East & North Africa
+Turkiye,TUR,2006,98.91,20.4,Europe & Central Asia
+Uganda,UGA,2006,64.49,72.83,Sub-Saharan Africa
+Ukraine,UKR,2006,99.76,3.9,Europe & Central Asia
+United Arab Emirates,ARE,2006,99.63,0.95,Middle East & North Africa
+Uruguay,URY,2006,78.53,19.95,Latin America & Caribbean
+Uzbekistan,UZB,2006,99.81,21.19,Europe & Central Asia
+"Venezuela, RB",VEN,2006,99.25,25.7,Latin America & Caribbean
+West Bank and Gaza,PSE,2006,99.37,29.07,Middle East & North Africa
+Zambia,ZMB,2006,66.57,59.13,Sub-Saharan Africa
+Albania,ALB,2008,99.22,17.9,Europe & Central Asia
+Angola,AGO,2008,40.82,31.92,Sub-Saharan Africa
+Argentina,ARG,2008,95.31,17.39,Latin America & Caribbean
+Aruba,ABW,2008,98.6,0.0,Latin America & Caribbean
+Azerbaijan,AZE,2008,99.19,26.93,Europe & Central Asia
+Belize,BLZ,2008,96.39,15.75,Latin America & Caribbean
+Bhutan,BTN,2008,98.17,54.48,South Asia
+Brunei Darussalam,BRN,2008,99.49,30.57,East Asia & Pacific
+Bulgaria,BGR,2008,97.92,0.15,Europe & Central Asia
+Burkina Faso,BFA,2008,73.19,59.95,Sub-Saharan Africa
+Burundi,BDI,2008,62.71,66.32,Sub-Saharan Africa
+Cabo Verde,CPV,2008,93.46,61.43,Sub-Saharan Africa
+Cameroon,CMR,2008,51.29,52.29,Sub-Saharan Africa
+Central African Republic,CAF,2008,62.54,74.6,Sub-Saharan Africa
+Colombia,COL,2008,99.66,15.8,Latin America & Caribbean
+"Congo, Rep.",COG,2008,71.22,72.23,Sub-Saharan Africa
+Costa Rica,CRI,2008,94.57,9.04,Latin America & Caribbean
+Cote d'Ivoire,CIV,2008,68.76,60.91,Sub-Saharan Africa
+Croatia,HRV,2008,99.39,0.35,Europe & Central Asia
+Cuba,CUB,2008,98.6,4.25,Latin America & Caribbean
+Cyprus,CYP,2008,99.99,0.25,Europe & Central Asia
+Czechia,CZE,2008,99.73,0.05,Europe & Central Asia
+Denmark,DNK,2008,99.79,0.0,Europe & Central Asia
+Dominican Republic,DOM,2008,95.3,20.7,Latin America & Caribbean
+El Salvador,SLV,2008,97.29,40.49,Latin America & Caribbean
+Eritrea,ERI,2008,92.23,67.41,Sub-Saharan Africa
+Estonia,EST,2008,99.43,0.1,Europe & Central Asia
+Ethiopia,ETH,2008,90.64,79.79,Sub-Saharan Africa
+Fiji,FJI,2008,96.3,13.5,East Asia & Pacific
+Finland,FIN,2008,99.88,0.0,Europe & Central Asia
+Georgia,GEO,2008,98.87,11.68,Europe & Central Asia
+Ghana,GHA,2008,95.75,46.93,Sub-Saharan Africa
+Guatemala,GTM,2008,98.75,46.55,Latin America & Caribbean
+Guinea,GIN,2008,58.76,44.0,Sub-Saharan Africa
+Guyana,GUY,2008,93.9,22.02,Latin America & Caribbean
+Hungary,HUN,2008,99.66,10.4,Europe & Central Asia
+Iceland,ISL,2008,99.78,0.0,Europe & Central Asia
+Indonesia,IDN,2008,92.05,28.51,East Asia & Pacific
+"Iran, Islamic Rep.",IRN,2008,99.37,54.48,Middle East & North Africa
+Italy,ITA,2008,99.94,0.02,Europe & Central Asia
+Kazakhstan,KAZ,2008,99.84,13.32,Europe & Central Asia
+Kyrgyz Republic,KGZ,2008,99.6,29.27,Europe & Central Asia
+Lao PDR,LAO,2008,82.71,40.7,East Asia & Pacific
+Latvia,LVA,2008,99.23,1.85,Europe & Central Asia
+Lebanon,LBN,2008,95.06,67.3,Middle East & North Africa
+Lesotho,LSO,2008,84.73,50.34,Sub-Saharan Africa
+Liberia,LBR,2008,80.73,72.81,Sub-Saharan Africa
+Lithuania,LTU,2008,99.33,2.4,Europe & Central Asia
+Madagascar,MDG,2008,73.3,81.83,Sub-Saharan Africa
+Malawi,MWI,2008,84.14,67.35,Sub-Saharan Africa
+Maldives,MDV,2008,96.24,40.98,South Asia
+Mali,MLI,2008,84.8,67.1,Sub-Saharan Africa
+Marshall Islands,MHL,2008,90.87,1.65,East Asia & Pacific
+Mauritania,MRT,2008,39.31,71.19,Sub-Saharan Africa
+Mauritius,MUS,2008,84.74,67.41,Sub-Saharan Africa
+Mexico,MEX,2008,94.87,25.3,Latin America & Caribbean
+Moldova,MDA,2008,98.15,15.1,Europe & Central Asia
+Morocco,MAR,2008,87.05,22.0,Middle East & North Africa
+Mozambique,MOZ,2008,60.24,76.04,Sub-Saharan Africa
+Namibia,NAM,2008,93.9,41.96,Sub-Saharan Africa
+Niger,NER,2008,58.72,70.27,Sub-Saharan Africa
+North Macedonia,MKD,2008,98.68,1.0,Europe & Central Asia
+Norway,NOR,2008,99.77,0.0,Europe & Central Asia
+Pakistan,PAK,2008,74.95,65.12,Middle East & North Africa
+Panama,PAN,2008,98.05,31.43,Latin America & Caribbean
+Paraguay,PRY,2008,90.13,30.04,Latin America & Caribbean
+Peru,PER,2008,97.63,40.02,Latin America & Caribbean
+Philippines,PHL,2008,98.89,44.35,East Asia & Pacific
+Poland,POL,2008,99.36,0.85,Europe & Central Asia
+Romania,ROU,2008,99.43,3.25,Europe & Central Asia
+Russian Federation,RUS,2008,100.0,3.3,Europe & Central Asia
+Sao Tome and Principe,STP,2008,75.36,60.4,Sub-Saharan Africa
+Senegal,SEN,2008,71.83,52.93,Sub-Saharan Africa
+Serbia,SRB,2008,99.36,0.55,Europe & Central Asia
+Seychelles,SYC,2008,98.25,67.41,Sub-Saharan Africa
+Singapore,SGP,2008,90.83,0.0,East Asia & Pacific
+Slovak Republic,SVK,2008,99.39,0.05,Europe & Central Asia
+Sri Lanka,LKA,2008,97.35,54.48,South Asia
+St. Lucia,LCA,2008,97.6,3.35,Latin America & Caribbean
+Suriname,SUR,2008,56.42,10.78,Latin America & Caribbean
+Sweden,SWE,2008,99.78,0.2,Europe & Central Asia
+Switzerland,CHE,2008,99.68,0.0,Europe & Central Asia
+Syrian Arab Republic,SYR,2008,97.68,28.53,Middle East & North Africa
+Tanzania,TZA,2008,47.56,64.3,Sub-Saharan Africa
+Timor-Leste,TLS,2008,89.65,54.0,East Asia & Pacific
+Trinidad and Tobago,TTO,2008,94.33,9.5,Latin America & Caribbean
+Tunisia,TUN,2008,94.44,10.4,Middle East & North Africa
+Turkiye,TUR,2008,98.22,19.01,Europe & Central Asia
+Uganda,UGA,2008,63.43,70.15,Sub-Saharan Africa
+Ukraine,UKR,2008,99.77,3.2,Europe & Central Asia
+Uruguay,URY,2008,82.26,16.22,Latin America & Caribbean
+Uzbekistan,UZB,2008,99.48,18.41,Europe & Central Asia
+West Bank and Gaza,PSE,2008,97.11,27.16,Middle East & North Africa
+Zambia,ZMB,2008,74.52,57.57,Sub-Saharan Africa
+Belarus,BLR,2009,98.55,0.0,Europe & Central Asia
+Albania,ALB,2010,99.19,15.4,Europe & Central Asia
+Algeria,DZA,2010,98.57,30.8,Middle East & North Africa
+Angola,AGO,2010,52.48,38.05,Sub-Saharan Africa
+Argentina,ARG,2010,96.18,16.66,Latin America & Caribbean
+Azerbaijan,AZE,2010,98.72,26.93,Europe & Central Asia
+Bangladesh,BGD,2010,94.51,55.09,South Asia
+Belize,BLZ,2010,97.49,15.75,Latin America & Caribbean
+Benin,BEN,2010,78.35,69.9,Sub-Saharan Africa
+Bermuda,BMU,2010,86.32,0.1,North America
+Bhutan,BTN,2010,99.6,53.7,South Asia
+Bolivia,BOL,2010,94.0,46.63,Latin America & Caribbean
+Brunei Darussalam,BRN,2010,99.95,28.77,East Asia & Pacific
+Bulgaria,BGR,2010,98.67,0.15,Europe & Central Asia
+Burundi,BDI,2010,71.25,60.96,Sub-Saharan Africa
+Cabo Verde,CPV,2010,97.8,58.95,Sub-Saharan Africa
+Cambodia,KHM,2010,81.87,56.6,East Asia & Pacific
+Cameroon,CMR,2010,60.81,49.02,Sub-Saharan Africa
+Chad,TCD,2010,95.51,85.95,Sub-Saharan Africa
+Colombia,COL,2010,98.6,14.45,Latin America & Caribbean
+"Congo, Rep.",COG,2010,77.27,65.99,Sub-Saharan Africa
+Costa Rica,CRI,2010,92.91,8.12,Latin America & Caribbean
+Croatia,HRV,2010,99.49,0.35,Europe & Central Asia
+Cuba,CUB,2010,98.63,5.3,Latin America & Caribbean
+Cyprus,CYP,2010,99.43,0.25,Europe & Central Asia
+Czechia,CZE,2010,99.34,0.05,Europe & Central Asia
+Denmark,DNK,2010,99.87,0.0,Europe & Central Asia
+Dominican Republic,DOM,2010,94.59,18.34,Latin America & Caribbean
+El Salvador,SLV,2010,96.32,34.49,Latin America & Caribbean
+Equatorial Guinea,GNQ,2010,97.24,60.6,Sub-Saharan Africa
+Eritrea,ERI,2010,96.32,64.82,Sub-Saharan Africa
+Estonia,EST,2010,99.48,0.1,Europe & Central Asia
+Eswatini,SWZ,2010,96.18,33.08,Sub-Saharan Africa
+Ethiopia,ETH,2010,89.49,76.7,Sub-Saharan Africa
+Finland,FIN,2010,99.97,0.0,Europe & Central Asia
+"Gambia, The",GMB,2010,86.42,47.91,Sub-Saharan Africa
+Greece,GRC,2010,98.52,0.1,Europe & Central Asia
+Guatemala,GTM,2010,89.82,44.31,Latin America & Caribbean
+Hungary,HUN,2010,99.68,9.1,Europe & Central Asia
+Iceland,ISL,2010,99.75,0.0,Europe & Central Asia
+"Iran, Islamic Rep.",IRN,2010,97.33,53.7,Middle East & North Africa
+Italy,ITA,2010,99.94,0.02,Europe & Central Asia
+Kazakhstan,KAZ,2010,99.96,10.54,Europe & Central Asia
+"Korea, Rep.",KOR,2010,99.98,9.3,East Asia & Pacific
+Kyrgyz Republic,KGZ,2010,98.18,24.8,Europe & Central Asia
+Lao PDR,LAO,2010,82.81,37.3,East Asia & Pacific
+Latvia,LVA,2010,98.77,1.6,Europe & Central Asia
+Lebanon,LBN,2010,95.16,42.19,Middle East & North Africa
+Lesotho,LSO,2010,85.01,46.21,Sub-Saharan Africa
+Lithuania,LTU,2010,98.8,2.0,Europe & Central Asia
+Madagascar,MDG,2010,79.81,79.43,Sub-Saharan Africa
+Malawi,MWI,2010,89.05,63.84,Sub-Saharan Africa
+Mali,MLI,2010,92.89,62.9,Sub-Saharan Africa
+Malta,MLT,2010,97.5,0.04,Middle East & North Africa
+Mauritius,MUS,2010,85.84,64.82,Sub-Saharan Africa
+Mexico,MEX,2010,96.35,23.59,Latin America & Caribbean
+Moldova,MDA,2010,98.13,12.3,Europe & Central Asia
+Morocco,MAR,2010,88.43,19.21,Middle East & North Africa
+Mozambique,MOZ,2010,59.41,72.53,Sub-Saharan Africa
+Niger,NER,2010,72.25,70.33,Sub-Saharan Africa
+Norway,NOR,2010,99.8,0.0,Europe & Central Asia
+Pakistan,PAK,2010,74.85,63.6,Middle East & North Africa
+Panama,PAN,2010,98.89,27.12,Latin America & Caribbean
+Paraguay,PRY,2010,92.98,27.04,Latin America & Caribbean
+Peru,PER,2010,94.38,38.17,Latin America & Caribbean
+Poland,POL,2010,99.18,0.55,Europe & Central Asia
+Romania,ROU,2010,99.53,2.95,Europe & Central Asia
+Samoa,WSM,2010,94.45,2.55,East Asia & Pacific
+Sao Tome and Principe,STP,2010,97.22,58.46,Sub-Saharan Africa
+Senegal,SEN,2010,94.66,49.38,Sub-Saharan Africa
+Serbia,SRB,2010,99.95,0.5,Europe & Central Asia
+Seychelles,SYC,2010,96.62,64.82,Sub-Saharan Africa
+Slovak Republic,SVK,2010,99.29,0.05,Europe & Central Asia
+Solomon Islands,SLB,2010,89.98,6.05,East Asia & Pacific
+Sri Lanka,LKA,2010,98.74,53.7,South Asia
+St. Lucia,LCA,2010,97.76,2.75,Latin America & Caribbean
+Suriname,SUR,2010,69.96,11.62,Latin America & Caribbean
+Sweden,SWE,2010,99.85,0.15,Europe & Central Asia
+Switzerland,CHE,2010,99.89,0.0,Europe & Central Asia
+Syrian Arab Republic,SYR,2010,98.51,27.0,Middle East & North Africa
+Timor-Leste,TLS,2010,94.81,50.0,East Asia & Pacific
+Togo,TGO,2010,91.14,53.06,Sub-Saharan Africa
+Turkiye,TUR,2010,98.91,17.61,Europe & Central Asia
+Uganda,UGA,2010,62.34,67.46,Sub-Saharan Africa
+Ukraine,UKR,2010,99.87,2.5,Europe & Central Asia
+United Arab Emirates,ARE,2010,95.77,0.65,Middle East & North Africa
+Uzbekistan,UZB,2010,99.03,15.63,Europe & Central Asia
+Viet Nam,VNM,2010,100.0,20.6,East Asia & Pacific
+West Bank and Gaza,PSE,2010,97.25,25.26,Middle East & North Africa
+Zambia,ZMB,2010,60.58,56.02,Sub-Saharan Africa
+Albania,ALB,2012,99.75,12.9,Europe & Central Asia
+Algeria,DZA,2012,98.52,28.89,Middle East & North Africa
+Argentina,ARG,2012,96.84,15.94,Latin America & Caribbean
+Azerbaijan,AZE,2012,99.09,26.93,Europe & Central Asia
+Belize,BLZ,2012,95.26,15.74,Latin America & Caribbean
+Benin,BEN,2012,88.7,69.51,Sub-Saharan Africa
+Bhutan,BTN,2012,96.29,52.94,South Asia
+Bolivia,BOL,2012,96.51,46.63,Latin America & Caribbean
+Botswana,BWA,2012,97.47,45.96,Sub-Saharan Africa
+British Virgin Islands,VGB,2012,93.68,1.64,Latin America & Caribbean
+Brunei Darussalam,BRN,2012,99.74,27.04,East Asia & Pacific
+Bulgaria,BGR,2012,99.3,0.15,Europe & Central Asia
+Burkina Faso,BFA,2012,68.2,48.81,Sub-Saharan Africa
+Burundi,BDI,2012,75.67,55.59,Sub-Saharan Africa
+Cabo Verde,CPV,2012,96.05,56.46,Sub-Saharan Africa
+Cambodia,KHM,2012,80.2,51.0,East Asia & Pacific
+Cayman Islands,CYM,2012,96.55,4.15,Latin America & Caribbean
+Chad,TCD,2012,95.01,84.82,Sub-Saharan Africa
+Colombia,COL,2012,96.66,13.11,Latin America & Caribbean
+"Congo, Dem. Rep.",COD,2012,72.3,75.14,Sub-Saharan Africa
+Costa Rica,CRI,2012,84.38,7.21,Latin America & Caribbean
+Cuba,CUB,2012,98.83,6.35,Latin America & Caribbean
+Cyprus,CYP,2012,99.54,0.25,Europe & Central Asia
+Czechia,CZE,2012,99.68,0.05,Europe & Central Asia
+Denmark,DNK,2012,99.92,0.0,Europe & Central Asia
+Dominican Republic,DOM,2012,94.92,15.98,Latin America & Caribbean
+El Salvador,SLV,2012,93.73,28.48,Latin America & Caribbean
+Eritrea,ERI,2012,97.82,62.17,Sub-Saharan Africa
+Estonia,EST,2012,99.55,0.1,Europe & Central Asia
+Eswatini,SWZ,2012,99.01,25.66,Sub-Saharan Africa
+Finland,FIN,2012,99.93,0.0,Europe & Central Asia
+"Gambia, The",GMB,2012,93.34,46.1,Sub-Saharan Africa
+Georgia,GEO,2012,99.96,10.15,Europe & Central Asia
+Germany,DEU,2012,99.34,0.0,Europe & Central Asia
+Ghana,GHA,2012,88.37,40.21,Sub-Saharan Africa
+Greece,GRC,2012,99.04,0.05,Europe & Central Asia
+Guatemala,GTM,2012,92.46,42.08,Latin America & Caribbean
+Guinea,GIN,2012,54.69,45.67,Sub-Saharan Africa
+Honduras,HND,2012,58.85,33.88,Latin America & Caribbean
+Hungary,HUN,2012,99.33,7.9,Europe & Central Asia
+Indonesia,IDN,2012,91.65,25.2,East Asia & Pacific
+Italy,ITA,2012,99.9,0.02,Europe & Central Asia
+Kazakhstan,KAZ,2012,99.92,7.75,Europe & Central Asia
+Kuwait,KWT,2012,98.33,0.0,Middle East & North Africa
+Kyrgyz Republic,KGZ,2012,99.7,20.33,Europe & Central Asia
+Lao PDR,LAO,2012,86.72,33.8,East Asia & Pacific
+Latvia,LVA,2012,97.9,1.3,Europe & Central Asia
+Lebanon,LBN,2012,98.33,17.09,Middle East & North Africa
+Lesotho,LSO,2012,84.71,42.08,Sub-Saharan Africa
+Lithuania,LTU,2012,99.3,1.55,Europe & Central Asia
+Madagascar,MDG,2012,72.86,77.03,Sub-Saharan Africa
+Maldives,MDV,2012,96.5,38.75,South Asia
+Mali,MLI,2012,79.87,58.71,Sub-Saharan Africa
+Malta,MLT,2012,98.96,0.04,Middle East & North Africa
+Mauritius,MUS,2012,78.11,62.17,Sub-Saharan Africa
+Mexico,MEX,2012,96.55,21.87,Latin America & Caribbean
+Moldova,MDA,2012,97.84,9.4,Europe & Central Asia
+Morocco,MAR,2012,90.37,16.43,Middle East & North Africa
+Mozambique,MOZ,2012,60.52,69.01,Sub-Saharan Africa
+Namibia,NAM,2012,95.97,41.66,Sub-Saharan Africa
+Nepal,NPL,2012,86.22,48.96,South Asia
+Niger,NER,2012,69.68,70.39,Sub-Saharan Africa
+Norway,NOR,2012,99.25,0.0,Europe & Central Asia
+Oman,OMN,2012,99.68,1.0,Middle East & North Africa
+Pakistan,PAK,2012,77.05,62.07,Middle East & North Africa
+Peru,PER,2012,99.15,46.08,Latin America & Caribbean
+Poland,POL,2012,99.3,0.25,Europe & Central Asia
+Qatar,QAT,2012,99.7,0.0,Middle East & North Africa
+Russian Federation,RUS,2012,100.0,3.15,Europe & Central Asia
+Rwanda,RWA,2012,74.93,50.53,Sub-Saharan Africa
+Sao Tome and Principe,STP,2012,83.54,56.52,Sub-Saharan Africa
+Senegal,SEN,2012,91.96,45.82,Sub-Saharan Africa
+Serbia,SRB,2012,99.66,0.5,Europe & Central Asia
+Seychelles,SYC,2012,94.96,62.17,Sub-Saharan Africa
+Sierra Leone,SLE,2012,87.96,61.6,Sub-Saharan Africa
+Slovak Republic,SVK,2012,99.25,0.05,Europe & Central Asia
+Sri Lanka,LKA,2012,99.72,52.94,South Asia
+St. Lucia,LCA,2012,94.01,2.2,Latin America & Caribbean
+Sudan,SDN,2012,95.85,83.83,Sub-Saharan Africa
+Suriname,SUR,2012,73.24,12.45,Latin America & Caribbean
+Sweden,SWE,2012,99.93,0.15,Europe & Central Asia
+Switzerland,CHE,2012,99.84,0.0,Europe & Central Asia
+Syrian Arab Republic,SYR,2012,57.26,25.43,Middle East & North Africa
+Tanzania,TZA,2012,56.31,55.78,Sub-Saharan Africa
+Timor-Leste,TLS,2012,89.45,46.0,East Asia & Pacific
+Togo,TGO,2012,84.29,49.81,Sub-Saharan Africa
+Tunisia,TUN,2012,92.76,9.64,Middle East & North Africa
+Turkiye,TUR,2012,90.81,16.22,Europe & Central Asia
+Uganda,UGA,2012,64.42,64.77,Sub-Saharan Africa
+Ukraine,UKR,2012,99.82,1.8,Europe & Central Asia
+United Arab Emirates,ARE,2012,98.39,0.5,Middle East & North Africa
+Uzbekistan,UZB,2012,99.29,12.84,Europe & Central Asia
+Viet Nam,VNM,2012,93.35,15.65,East Asia & Pacific
+West Bank and Gaza,PSE,2012,97.92,23.35,Middle East & North Africa
+"Yemen, Rep.",YEM,2012,90.46,48.08,Middle East & North Africa
+Zambia,ZMB,2012,63.92,54.47,Sub-Saharan Africa
+Zimbabwe,ZWE,2012,77.9,23.95,Sub-Saharan Africa
+Albania,ALB,2014,99.08,10.3,Europe & Central Asia
+Algeria,DZA,2014,99.0,24.98,Middle East & North Africa
+Argentina,ARG,2014,97.41,15.2,Latin America & Caribbean
+Armenia,ARM,2014,99.9,9.37,Europe & Central Asia
+Belize,BLZ,2014,96.36,15.74,Latin America & Caribbean
+Benin,BEN,2014,87.57,69.11,Sub-Saharan Africa
+Bermuda,BMU,2014,50.78,0.1,North America
+Bolivia,BOL,2014,96.97,46.63,Latin America & Caribbean
+Bosnia and Herzegovina,BIH,2014,99.49,4.0,Europe & Central Asia
+British Virgin Islands,VGB,2014,99.13,1.64,Latin America & Caribbean
+Brunei Darussalam,BRN,2014,99.38,25.3,East Asia & Pacific
+Bulgaria,BGR,2014,99.25,0.2,Europe & Central Asia
+Burkina Faso,BFA,2014,76.55,43.25,Sub-Saharan Africa
+Burundi,BDI,2014,79.6,50.23,Sub-Saharan Africa
+Cabo Verde,CPV,2014,98.2,53.94,Sub-Saharan Africa
+Cambodia,KHM,2014,81.7,45.4,East Asia & Pacific
+Cameroon,CMR,2014,67.9,42.48,Sub-Saharan Africa
+Colombia,COL,2014,98.3,11.77,Latin America & Caribbean
+Costa Rica,CRI,2014,83.64,6.29,Latin America & Caribbean
+Cote d'Ivoire,CIV,2014,92.68,56.29,Sub-Saharan Africa
+Cuba,CUB,2014,98.37,7.4,Latin America & Caribbean
+Cyprus,CYP,2014,99.36,0.25,Europe & Central Asia
+Czechia,CZE,2014,99.98,0.05,Europe & Central Asia
+Denmark,DNK,2014,100.0,0.0,Europe & Central Asia
+Djibouti,DJI,2014,80.24,59.53,Middle East & North Africa
+Dominican Republic,DOM,2014,95.27,13.61,Latin America & Caribbean
+El Salvador,SLV,2014,93.43,22.48,Latin America & Caribbean
+Eritrea,ERI,2014,92.27,59.53,Sub-Saharan Africa
+Estonia,EST,2014,99.33,0.1,Europe & Central Asia
+Eswatini,SWZ,2014,99.35,18.23,Sub-Saharan Africa
+Ethiopia,ETH,2014,91.44,70.5,Sub-Saharan Africa
+Finland,FIN,2014,99.85,0.0,Europe & Central Asia
+Georgia,GEO,2014,99.58,9.38,Europe & Central Asia
+Germany,DEU,2014,99.63,0.0,Europe & Central Asia
+Ghana,GHA,2014,98.24,36.85,Sub-Saharan Africa
+Guatemala,GTM,2014,84.28,39.84,Latin America & Caribbean
+Hungary,HUN,2014,99.64,7.2,Europe & Central Asia
+Italy,ITA,2014,99.93,0.02,Europe & Central Asia
+Kazakhstan,KAZ,2014,99.69,4.97,Europe & Central Asia
+Kenya,KEN,2014,98.77,52.36,Sub-Saharan Africa
+"Korea, Rep.",KOR,2014,99.64,4.7,East Asia & Pacific
+Kyrgyz Republic,KGZ,2014,99.21,15.86,Europe & Central Asia
+Lao PDR,LAO,2014,89.1,30.4,East Asia & Pacific
+Latvia,LVA,2014,98.38,1.05,Europe & Central Asia
+Lebanon,LBN,2014,89.36,4.5,Middle East & North Africa
+Lesotho,LSO,2014,86.6,37.94,Sub-Saharan Africa
+Liberia,LBR,2014,79.38,67.46,Sub-Saharan Africa
+Lithuania,LTU,2014,99.52,1.1,Europe & Central Asia
+Madagascar,MDG,2014,76.04,74.62,Sub-Saharan Africa
+Mali,MLI,2014,77.94,54.51,Sub-Saharan Africa
+Malta,MLT,2014,96.79,0.04,Middle East & North Africa
+Mauritania,MRT,2014,59.21,61.06,Sub-Saharan Africa
+Mauritius,MUS,2014,85.85,59.53,Sub-Saharan Africa
+Mexico,MEX,2014,97.06,20.16,Latin America & Caribbean
+Moldova,MDA,2014,97.94,6.5,Europe & Central Asia
+Morocco,MAR,2014,87.4,13.64,Middle East & North Africa
+Mozambique,MOZ,2014,63.57,65.5,Sub-Saharan Africa
+Nepal,NPL,2014,87.3,46.07,South Asia
+North Macedonia,MKD,2014,99.86,0.5,Europe & Central Asia
+Norway,NOR,2014,99.93,0.0,Europe & Central Asia
+Oman,OMN,2014,99.36,0.5,Middle East & North Africa
+Peru,PER,2014,95.45,47.05,Latin America & Caribbean
+Philippines,PHL,2014,97.45,40.13,East Asia & Pacific
+Poland,POL,2014,99.47,0.05,Europe & Central Asia
+Qatar,QAT,2014,99.5,0.0,Middle East & North Africa
+Russian Federation,RUS,2014,99.92,3.0,Europe & Central Asia
+Rwanda,RWA,2014,68.46,47.05,Sub-Saharan Africa
+Samoa,WSM,2014,99.23,1.15,East Asia & Pacific
+Senegal,SEN,2014,90.0,42.27,Sub-Saharan Africa
+Serbia,SRB,2014,99.5,0.45,Europe & Central Asia
+Seychelles,SYC,2014,99.14,59.53,Sub-Saharan Africa
+Slovak Republic,SVK,2014,99.08,0.05,Europe & Central Asia
+South Africa,ZAF,2014,97.3,24.94,Sub-Saharan Africa
+Spain,ESP,2014,99.88,0.05,Europe & Central Asia
+Sri Lanka,LKA,2014,99.72,52.19,South Asia
+Sudan,SDN,2014,94.25,78.75,Sub-Saharan Africa
+Suriname,SUR,2014,69.73,13.29,Latin America & Caribbean
+Sweden,SWE,2014,99.93,0.15,Europe & Central Asia
+Switzerland,CHE,2014,99.88,0.0,Europe & Central Asia
+Timor-Leste,TLS,2014,94.32,42.0,East Asia & Pacific
+Togo,TGO,2014,85.32,46.57,Sub-Saharan Africa
+Tunisia,TUN,2014,88.89,9.14,Middle East & North Africa
+Turkiye,TUR,2014,99.53,14.82,Europe & Central Asia
+Tuvalu,TUV,2014,99.51,1.21,East Asia & Pacific
+Uganda,UGA,2014,53.88,62.08,Sub-Saharan Africa
+Ukraine,UKR,2014,88.52,1.1,Europe & Central Asia
+Uzbekistan,UZB,2014,99.45,10.05,Europe & Central Asia
+Viet Nam,VNM,2014,94.02,10.71,East Asia & Pacific
+West Bank and Gaza,PSE,2014,98.65,21.44,Middle East & North Africa
+Afghanistan,AFG,2016,92.32,72.13,Middle East & North Africa
+Albania,ALB,2016,98.17,7.8,Europe & Central Asia
+Argentina,ARG,2016,99.85,14.5,Latin America & Caribbean
+Armenia,ARM,2016,98.1,8.88,Europe & Central Asia
+Belize,BLZ,2016,95.23,15.73,Latin America & Caribbean
+Bhutan,BTN,2016,99.58,51.44,South Asia
+Bosnia and Herzegovina,BIH,2016,98.64,4.0,Europe & Central Asia
+Brunei Darussalam,BRN,2016,99.74,23.54,East Asia & Pacific
+Bulgaria,BGR,2016,99.33,0.2,Europe & Central Asia
+Burkina Faso,BFA,2016,76.06,37.68,Sub-Saharan Africa
+Burundi,BDI,2016,76.31,44.87,Sub-Saharan Africa
+Cabo Verde,CPV,2016,99.44,51.4,Sub-Saharan Africa
+Cambodia,KHM,2016,87.23,39.7,East Asia & Pacific
+Costa Rica,CRI,2016,85.28,5.38,Latin America & Caribbean
+Cote d'Ivoire,CIV,2016,91.94,54.75,Sub-Saharan Africa
+Croatia,HRV,2016,98.58,0.25,Europe & Central Asia
+Cuba,CUB,2016,98.61,8.44,Latin America & Caribbean
+Cyprus,CYP,2016,99.74,0.3,Europe & Central Asia
+Czechia,CZE,2016,99.95,0.05,Europe & Central Asia
+Denmark,DNK,2016,99.94,0.0,Europe & Central Asia
+Djibouti,DJI,2016,83.9,56.84,Middle East & North Africa
+Dominican Republic,DOM,2016,92.58,11.25,Latin America & Caribbean
+"Egypt, Arab Rep.",EGY,2016,94.39,0.9,Middle East & North Africa
+El Salvador,SLV,2016,92.09,16.48,Latin America & Caribbean
+Estonia,EST,2016,99.83,0.1,Europe & Central Asia
+Eswatini,SWZ,2016,98.05,10.81,Sub-Saharan Africa
+Finland,FIN,2016,99.9,0.0,Europe & Central Asia
+Georgia,GEO,2016,99.51,8.61,Europe & Central Asia
+Germany,DEU,2016,99.5,0.0,Europe & Central Asia
+Ghana,GHA,2016,93.14,33.49,Sub-Saharan Africa
+Guatemala,GTM,2016,89.67,37.6,Latin America & Caribbean
+Hungary,HUN,2016,99.5,7.2,Europe & Central Asia
+Indonesia,IDN,2016,91.5,21.89,East Asia & Pacific
+"Iran, Islamic Rep.",IRN,2016,95.74,51.44,Middle East & North Africa
+Italy,ITA,2016,99.95,0.02,Europe & Central Asia
+Jordan,JOR,2016,99.29,23.4,Middle East & North Africa
+Kazakhstan,KAZ,2016,99.15,2.19,Europe & Central Asia
+"Korea, Rep.",KOR,2016,99.64,5.8,East Asia & Pacific
+Kuwait,KWT,2016,97.11,0.0,Middle East & North Africa
+Kyrgyz Republic,KGZ,2016,99.41,11.38,Europe & Central Asia
+Lao PDR,LAO,2016,87.69,27.0,East Asia & Pacific
+Latvia,LVA,2016,98.98,0.8,Europe & Central Asia
+Lebanon,LBN,2016,97.59,4.5,Middle East & North Africa
+Liberia,LBR,2016,79.63,65.67,Sub-Saharan Africa
+Lithuania,LTU,2016,99.21,0.65,Europe & Central Asia
+Maldives,MDV,2016,98.86,36.52,South Asia
+Mali,MLI,2016,78.31,50.32,Sub-Saharan Africa
+Malta,MLT,2016,98.89,0.04,Middle East & North Africa
+Mauritania,MRT,2016,58.32,57.68,Sub-Saharan Africa
+Mauritius,MUS,2016,87.54,56.84,Sub-Saharan Africa
+Mexico,MEX,2016,96.57,18.44,Latin America & Caribbean
+Moldova,MDA,2016,98.43,6.5,Europe & Central Asia
+Mongolia,MNG,2016,99.08,25.82,East Asia & Pacific
+Montenegro,MNE,2016,99.84,11.2,Europe & Central Asia
+Morocco,MAR,2016,90.23,10.85,Middle East & North Africa
+Nepal,NPL,2016,82.38,43.17,South Asia
+Norway,NOR,2016,99.67,0.0,Europe & Central Asia
+Oman,OMN,2016,98.28,0.3,Middle East & North Africa
+Panama,PAN,2016,99.19,16.3,Latin America & Caribbean
+Peru,PER,2016,93.79,45.86,Latin America & Caribbean
+Philippines,PHL,2016,96.59,38.72,East Asia & Pacific
+Poland,POL,2016,99.77,4.5,Europe & Central Asia
+Qatar,QAT,2016,98.91,0.0,Middle East & North Africa
+Romania,ROU,2016,99.55,2.1,Europe & Central Asia
+Rwanda,RWA,2016,82.41,43.57,Sub-Saharan Africa
+Samoa,WSM,2016,96.8,0.5,East Asia & Pacific
+Sao Tome and Principe,STP,2016,96.98,52.64,Sub-Saharan Africa
+Senegal,SEN,2016,72.98,38.71,Sub-Saharan Africa
+Serbia,SRB,2016,99.55,0.45,Europe & Central Asia
+Seychelles,SYC,2016,98.51,56.84,Sub-Saharan Africa
+Sierra Leone,SLE,2016,87.53,56.12,Sub-Saharan Africa
+Singapore,SGP,2016,99.13,0.0,East Asia & Pacific
+Slovak Republic,SVK,2016,99.11,0.05,Europe & Central Asia
+Solomon Islands,SLB,2016,91.23,2.0,East Asia & Pacific
+Spain,ESP,2016,99.97,0.05,Europe & Central Asia
+St. Lucia,LCA,2016,96.81,1.05,Latin America & Caribbean
+Sudan,SDN,2016,91.99,73.66,Sub-Saharan Africa
+Suriname,SUR,2016,62.49,14.13,Latin America & Caribbean
+Sweden,SWE,2016,99.57,0.1,Europe & Central Asia
+Switzerland,CHE,2016,99.92,0.0,Europe & Central Asia
+Tajikistan,TJK,2016,99.49,0.05,Europe & Central Asia
+Timor-Leste,TLS,2016,91.58,37.9,East Asia & Pacific
+Togo,TGO,2016,83.25,43.33,Sub-Saharan Africa
+Tunisia,TUN,2016,97.71,8.64,Middle East & North Africa
+Uganda,UGA,2016,58.95,59.39,Sub-Saharan Africa
+Ukraine,UKR,2016,99.6,1.1,Europe & Central Asia
+United Kingdom,GBR,2016,99.98,0.1,Europe & Central Asia
+United States,USA,2016,99.23,0.2,North America
+Uzbekistan,UZB,2016,99.42,7.29,Europe & Central Asia
+West Bank and Gaza,PSE,2016,98.81,19.54,Middle East & North Africa
+Kazakhstan,KAZ,2018,99.53,0.79,Europe & Central Asia

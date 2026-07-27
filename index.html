@@ -1,0 +1,1724 @@
+<html>
+<head>
+<title>CS 416: Narrative Visualization Project</title>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
+<style>
+  body {
+    font-family: Arial;
+    margin: 30px;
+  }
+
+  svg {
+    border: 1px solid lightgray;
+  }
+
+  circle {
+    stroke: white;
+  }
+
+  .annotation {
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  #tooltip {
+    position: absolute;
+    background: white;
+    border: 1px solid black;
+    padding: 6px;
+    display: none;
+  }
+
+  button, select {
+    margin: 5px;
+    padding: 5px;
+  }
+</style>
+</head>
+
+<body onload="init()">
+
+<h1 id="title">Educational Opportunity Around the World</h1>
+
+<p id="description">
+  Each dot represents one country. The further right a dot appears on the dot plot,
+  the larger the percentage of students who progress to secondary school.
+</p>
+
+<label>Year:</label>
+<select id="yearSelect"></select>
+
+<label>Region:</label>
+<select id="regionSelect"></select>
+
+<span id="metricControls" style="display: none;">
+  <label>Explore another outcome:</label>
+  <select id="metricSelect">
+    <option value="GDP per capita">GDP per capita</option>
+    <option value="Population living in slums">Population living in slums</option>
+    <option value="Unemployment">Unemployment</option>
+    <option value="Poverty">Poverty</option>
+  </select>
+</span>
+
+<button id="resetButton">Reset</button>
+
+<p id="summary"></p>
+
+<svg width="1050" height="650"></svg>
+
+<p id="countryDetails">
+  Click a country to keep it highlighted.
+</p>
+
+<button id="previousButton" disabled>Previous</button>
+<button id="nextButton">Next Scene</button>
+
+<p id="sceneNumber">Scene 1 of 4</p>
+
+<div id="tooltip"></div>
+
+<script>
+
+// Parameters: This is where I store the variables that store the current state of the visualization.
+
+var currentScene = 1;
+var selectedYear = 2012;
+var selectedRegion = "All Regions";
+var selectedCountry = null;
+var selectedMetric = "GDP per capita";
+
+
+// CSV file data
+var scene1Data;
+var scene2Data;
+var scene3Data;
+var scene4Data;
+
+
+// Init function: runs when the page first loads
+
+async function init() {
+  scene1Data = await d3.csv("scene1_data.csv");
+  scene2Data = await d3.csv("scene2_data.csv");
+  scene3Data = await d3.csv("scene3_data.csv");
+  scene4Data = await d3.csv("scene4_data.csv");
+
+  // convert string data into numbers
+  scene1Data.forEach(function(d) {
+    d.Year = +d.Year;
+    d.Progression = +d.Progression;
+  });
+
+  scene2Data.forEach(function(d) {
+    d.Year = +d.Year;
+    d.Progression = +d.Progression;
+    d.GDP = +d.GDP;
+  });
+
+  scene3Data.forEach(function(d) {
+    d.Year = +d.Year;
+    d.Progression = +d.Progression;
+    d.SlumPopulation = +d.SlumPopulation;
+  });
+
+  scene4Data.forEach(function(d) {
+    d.Year = +d.Year;
+    d.Progression = +d.Progression;
+    d.Value = +d.Value;
+  });
+
+  createDropdowns();
+  createTriggers();
+  drawScene1();
+}
+
+// Initialize dropdowns
+
+function createDropdowns() {
+  var years = d3.set(
+    scene1Data.map(function(d) {
+      return d.Year;
+    })
+  ).values();
+
+  years = years.map(Number).sort(function(a, b) {
+    return b - a;
+  });
+
+  // Filter out years with fewer than 80 countries of data (not enough data for observation)
+  years = years.filter(function(year) {
+
+    var count = scene1Data.filter(function(d) {
+      return d.Year === year;
+    }).length;
+
+    return count >= 80;
+  });
+
+  // Add the years to year dropdown
+  d3.select("#yearSelect")
+    .selectAll("option")
+    .data(years)
+    .enter()
+    .append("option")
+    .attr("value", function(d) {
+      return d;
+    })
+    .text(function(d) {
+      return d;
+    });
+
+  d3.select("#yearSelect")
+    .property("value", selectedYear);
+
+
+  // Find all available regions
+  var regions = d3.set(
+    scene1Data.map(function(d) {
+      return d.Region;
+    })
+  ).values().sort();
+
+  regions.unshift("All Regions");
+
+  // Add regions to region dropdown
+  d3.select("#regionSelect")
+    .selectAll("option")
+    .data(regions)
+    .enter()
+    .append("option")
+    .attr("value", function(d) {
+      return d;
+    })
+    .text(function(d) {
+      return d;
+    });
+}
+
+// SCENE 1: Dot Plot of Educational Progression
+// How many students continue to secondary school
+
+function drawScene1() {
+
+  d3.select("#metricControls")
+    .style("display", "none");
+
+  currentScene = 1;
+
+  // Update the text for Scene 1.
+  d3.select("#title")
+    .text("Educational Opportunity Around the World");
+
+  d3.select("#description")
+    .text(
+      "Each dot represents one country. The further right a dot appears on the dot plot, " +
+      "the larger the percentage of students who progress to secondary school."
+    );
+
+  d3.select("#sceneNumber")
+    .text("Scene 1 of 4");
+
+  d3.select("#previousButton")
+    .property("disabled", true);
+
+  d3.select("#nextButton")
+    .property("disabled", false)
+    .text("Next Scene");
+
+  // Filter the data to selected year in dropdown
+  var yearData = scene1Data.filter(function(d) {
+    return d.Year === selectedYear;
+  });
+
+  // Get list of regions for the y-axis
+  var regions = d3.set(
+    yearData.map(function(d) {
+      return d.Region;
+    })
+  ).values().sort();
+
+  // Set up chart size
+  var width = 740;
+  var height = 450;
+
+  // Create x-axis
+  var x = d3.scaleLinear()
+    .domain([0, 105])
+    .range([0, width]);
+
+  // Create y-axis
+  var y = d3.scaleBand()
+    .domain(regions)
+    .range([0, height])
+    .padding(0.4);
+
+  // Give every region a different color
+  var color = d3.scaleOrdinal(d3.schemeDark2)
+    .domain(regions);
+
+  // Clear the old chart before redrawing
+  d3.select("svg")
+    .selectAll("*")
+    .remove();
+
+  // Create chart group
+  var chart = d3.select("svg")
+    .append("g")
+    .attr("transform", "translate(230,90)");
+
+  // Add x-axis
+  var xAxis = d3.axisBottom(x)
+    .tickValues([0, 20, 40, 60, 80, 100])
+    .tickFormat(function(d) {
+      return d + "%";
+    });
+
+  chart.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .call(xAxis);
+
+  // Add x-axis label
+  chart.append("text")
+    .attr("x", width / 2)
+    .attr("y", height + 50)
+    .attr("text-anchor", "middle")
+    .text("Students progressing to secondary school");
+
+  // Add region names on the left
+  chart.selectAll(".regionLabel")
+    .data(regions)
+    .enter()
+    .append("text")
+    .attr("class", "regionLabel")
+    .attr("x", -10)
+    .attr("y", function(d) {
+      return y(d) + y.bandwidth() / 2 + 4;
+    })
+    .attr("text-anchor", "end")
+    .text(function(d) {
+      return d;
+    });
+
+  // Add one circle for each country
+  chart.selectAll("circle")
+    .data(yearData)
+    .enter()
+    .append("circle")
+    .attr("cx", function(d) {
+      return x(d.Progression);
+    })
+    .attr("cy", function(d) {
+      return y(d.Region) + y.bandwidth() / 2;
+    })
+    .attr("r", function(d) {
+      if (d["Country Code"] === selectedCountry) {
+        return 9;
+      }
+
+      return 6;
+    })
+    .attr("fill", function(d) {
+      return color(d.Region);
+    })
+    .attr("opacity", function(d) {
+
+      // Fade countries outside the selected region
+      if (
+        selectedRegion !== "All Regions" &&
+        d.Region !== selectedRegion
+      ) {
+        return 0.1;
+      }
+
+      // Fade other countries after one is clicked
+      if (
+        selectedCountry !== null &&
+        d["Country Code"] !== selectedCountry
+      ) {
+        return 0.25;
+      }
+
+      return 0.8;
+    })
+    .attr("stroke", function(d) {
+
+      if (d["Country Code"] === selectedCountry) {
+        return "black";
+      }
+
+      return "white";
+    })
+    .attr("stroke-width", function(d) {
+
+      if (d["Country Code"] === selectedCountry) {
+        return 3;
+      }
+
+      return 1;
+    })
+
+    // Trigger tooltip logic
+    .on("mouseover", function(d) {
+
+      d3.select("#tooltip")
+        .style("display", "block")
+        .html(
+          "<b>" + d["Country Name"] + "</b><br>" +
+          d.Region + "<br>" +
+          "Progression: " + d.Progression.toFixed(1) + "%<br>" +
+          "Year: " + d.Year
+        );
+
+      d3.select(this)
+        .attr("r", 9)
+        .attr("stroke", "black")
+        .attr("stroke-width", 2);
+    })
+
+    .on("mousemove", function() {
+
+      d3.select("#tooltip")
+        .style("left", (d3.event.pageX + 10) + "px")
+        .style("top", (d3.event.pageY + 10) + "px");
+    })
+
+    .on("mouseout", function(d) {
+
+      d3.select("#tooltip")
+        .style("display", "none");
+
+      if (d["Country Code"] !== selectedCountry) {
+        d3.select(this)
+          .attr("r", 6)
+          .attr("stroke", "white")
+          .attr("stroke-width", 1);
+      }
+    })
+
+    // Country click trigger logic
+    .on("click", function(d) {
+
+      if (selectedCountry === d["Country Code"]) {
+        selectedCountry = null;
+      } else {
+        selectedCountry = d["Country Code"];
+      }
+
+      updateScene1CountryDetails(d);
+      drawScene1();
+    });
+
+  // Create permanent annotations
+  drawScene1Annotations(chart, yearData, x, y);
+
+  // Update summary text
+  updateScene1Summary(yearData);
+}
+
+// SCENE 1: Annotations
+
+function drawScene1Annotations(chart, yearData, x, y) {
+
+  // If a region is selected, use only that region for annotations
+  var annotationData = yearData;
+
+  if (selectedRegion !== "All Regions") {
+    annotationData = yearData.filter(function(d) {
+      return d.Region === selectedRegion;
+    });
+  }
+
+  if (annotationData.length === 0) {
+    return;
+  }
+
+  // Find the highest country
+  var highest = annotationData.reduce(function(a, b) {
+    return a.Progression > b.Progression ? a : b;
+  });
+
+  // Find the lowest country
+  var lowest = annotationData.reduce(function(a, b) {
+    return a.Progression < b.Progression ? a : b;
+  });
+
+  // Highest country annotation line
+  chart.append("line")
+    .attr("x1", x(highest.Progression))
+    .attr("y1", y(highest.Region) + y.bandwidth() / 2)
+    .attr("x2", x(highest.Progression) - 70)
+    .attr("y2", y(highest.Region) - 15)
+    .attr("stroke", "black");
+
+  // Highest country annotation text
+  chart.append("text")
+    .attr("class", "annotation")
+    .attr("x", x(highest.Progression) - 220)
+    .attr("y", y(highest.Region) - 20)
+    .text(
+      "High: " +
+      highest["Country Name"] +
+      " (" +
+      highest.Progression.toFixed(1) +
+      "%)"
+    );
+
+  // Lowest country annotation line
+  chart.append("line")
+    .attr("x1", x(lowest.Progression))
+    .attr("y1", y(lowest.Region) + y.bandwidth() / 2)
+    .attr("x2", x(lowest.Progression) - 70)
+    .attr("y2", y(lowest.Region) + 55)
+    .attr("stroke", "black");
+
+  // Lowest country annotation text
+  chart.append("text")
+    .attr("class", "annotation")
+    .attr("x", x(lowest.Progression) - 75)
+    .attr("y", y(lowest.Region) + 60)
+    .attr("text-anchor", "end")
+    .text(
+      "Low: " +
+      lowest["Country Name"] +
+      " (" +
+      lowest.Progression.toFixed(1) +
+      "%)"
+    );
+
+  // Main narrative annotation
+  chart.append("text")
+    .attr("class", "annotation")
+    .attr("x", 190)
+    .attr("y", -50)
+    .text(
+      "The distance between the lowest and highest values shows"
+    );
+
+  chart.append("text")
+    .attr("class", "annotation")
+    .attr("x", 190)
+    .attr("y", -32)
+    .text(
+      "that educational opportunity is not evenly distributed."
+    );
+}
+
+// SCENE 1: Summary
+
+function updateScene1Summary(yearData) {
+
+  var shownData = yearData;
+
+  if (selectedRegion !== "All Regions") {
+    shownData = yearData.filter(function(d) {
+      return d.Region === selectedRegion;
+    });
+  }
+
+  if (shownData.length === 0) {
+    d3.select("#summary")
+      .text("No countries have data for this selection.");
+
+    return;
+  }
+
+  var median = d3.median(shownData, function(d) {
+    return d.Progression;
+  });
+
+  d3.select("#summary")
+    .text(
+      shownData.length +
+      " countries shown | Median: " +
+      median.toFixed(1) +
+      "%"
+    );
+}
+
+// SCENE 1: Details for selected country
+
+function updateScene1CountryDetails(d) {
+
+  if (selectedCountry === null) {
+    d3.select("#countryDetails")
+      .text("Click a country to keep it highlighted.");
+  } else {
+    d3.select("#countryDetails")
+      .html(
+        "<b>" + d["Country Name"] + "</b>: " +
+        d.Progression.toFixed(1) +
+        "% of students progressed to secondary school in " +
+        d.Year + "."
+      );
+  }
+}
+
+// SCENE 2: Scatterplot of Education and GDP
+
+function drawScene2() {
+
+  d3.select("#metricControls")
+    .style("display", "none");
+
+  currentScene = 2;
+
+  // Update text for Scene 2
+  d3.select("#title")
+    .text("Education and Economic Prosperity");
+
+  d3.select("#description")
+    .text(
+      "Each dot represents one country. Countries farther to the right " +
+      "have higher secondary-school progression, while countries higher " +
+      "on the chart have greater GDP per capita."
+    );
+
+  d3.select("#sceneNumber")
+    .text("Scene 2 of 4");
+
+  d3.select("#previousButton")
+    .property("disabled", false);
+
+  d3.select("#nextButton")
+    .property("disabled", false)
+    .text("Next Scene");
+
+  // Filter data to the selected year
+  var yearData = scene2Data.filter(function(d) {
+    return d.Year === selectedYear;
+  });
+
+  // Filter to selected region
+  if (selectedRegion !== "All Regions") {
+    yearData = yearData.filter(function(d) {
+      return d.Region === selectedRegion;
+    });
+  }
+
+  // Clear old chart
+  d3.select("svg")
+    .selectAll("*")
+    .remove();
+
+  // Handle selections with no data
+  if (yearData.length === 0) {
+
+    d3.select("#summary")
+      .text("No countries have both education and GDP data for this selection.");
+
+    d3.select("#countryDetails")
+      .text("Try selecting a different year or region.");
+
+    return;
+  }
+
+  // Set chart size
+  var width = 740;
+  var height = 450;
+
+  // Create the x scale for education
+  var x = d3.scaleLinear()
+    .domain([0, 105])
+    .range([0, width]);
+
+  // Find smallest and largest GDP values
+  var lowestGDP = d3.min(yearData, function(d) {
+    return d.GDP;
+  });
+
+  var highestGDP = d3.max(yearData, function(d) {
+    return d.GDP;
+  });
+
+  // Logarithmic y scale
+  var y = d3.scaleLog()
+    .domain([lowestGDP * 0.8, highestGDP * 1.2])
+    .range([height, 0]);
+
+  // Create region colors
+  var regions = d3.set(
+    yearData.map(function(d) {
+      return d.Region;
+    })
+  ).values();
+
+  var color = d3.scaleOrdinal(d3.schemeDark2)
+    .domain(regions);
+
+  // Create chart group
+  var chart = d3.select("svg")
+    .append("g")
+    .attr("transform", "translate(150,90)");
+
+  // Create x-axis
+  var xAxis = d3.axisBottom(x)
+    .tickValues([0, 20, 40, 60, 80, 100])
+    .tickFormat(function(d) {
+      return d + "%";
+    });
+
+  chart.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .call(xAxis);
+
+  // Add x-axis label
+  chart.append("text")
+    .attr("x", width / 2)
+    .attr("y", height + 50)
+    .attr("text-anchor", "middle")
+    .text("Students progressing to secondary school");
+
+  // Create y-axis
+  var yAxis = d3.axisLeft(y)
+    .ticks(6)
+    .tickFormat(function(d) {
+      return "$" + d3.format(",")(d);
+    });
+
+  chart.append("g")
+    .call(yAxis);
+
+  // Add y-axis label.
+  chart.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("x", -height / 2)
+    .attr("y", -105)
+    .attr("text-anchor", "middle")
+    .text("GDP per capita (constant 2015 US$)");
+
+  // Add circle for each country
+  chart.selectAll("circle")
+    .data(yearData)
+    .enter()
+    .append("circle")
+    .attr("cx", function(d) {
+      return x(d.Progression);
+    })
+    .attr("cy", function(d) {
+      return y(d.GDP);
+    })
+    .attr("r", function(d) {
+      if (d["Country Code"] === selectedCountry) {
+        return 9;
+      }
+
+      return 6;
+    })
+    .attr("fill", function(d) {
+      return color(d.Region);
+    })
+    .attr("opacity", function(d) {
+
+      if (
+        selectedCountry !== null &&
+        d["Country Code"] !== selectedCountry
+      ) {
+        return 0.25;
+      }
+
+      return 0.8;
+    })
+    .attr("stroke", function(d) {
+
+      if (d["Country Code"] === selectedCountry) {
+        return "black";
+      }
+
+      return "white";
+    })
+    .attr("stroke-width", function(d) {
+
+      if (d["Country Code"] === selectedCountry) {
+        return 3;
+      }
+
+      return 1;
+    })
+
+    // Trigger tooltip logic
+    .on("mouseover", function(d) {
+
+      d3.select("#tooltip")
+        .style("display", "block")
+        .html(
+          "<b>" + d["Country Name"] + "</b><br>" +
+          d.Region + "<br>" +
+          "Progression: " + d.Progression.toFixed(1) + "%<br>" +
+          "GDP per capita: $" + d3.format(",.0f")(d.GDP) + "<br>" +
+          "Year: " + d.Year
+        );
+
+      d3.select(this)
+        .attr("r", 9)
+        .attr("stroke", "black")
+        .attr("stroke-width", 2);
+    })
+
+    .on("mousemove", function() {
+
+      d3.select("#tooltip")
+        .style("left", (d3.event.pageX + 10) + "px")
+        .style("top", (d3.event.pageY + 10) + "px");
+    })
+
+    .on("mouseout", function(d) {
+
+      d3.select("#tooltip")
+        .style("display", "none");
+
+      if (d["Country Code"] !== selectedCountry) {
+        d3.select(this)
+          .attr("r", 6)
+          .attr("stroke", "white")
+          .attr("stroke-width", 1);
+      }
+    })
+
+    // Country click trigger logic
+    .on("click", function(d) {
+
+      if (selectedCountry === d["Country Code"]) {
+        selectedCountry = null;
+      } else {
+        selectedCountry = d["Country Code"];
+      }
+
+      updateScene2CountryDetails(d);
+      drawScene2();
+    });
+
+  // Add permanent annotations
+  drawScene2Annotations(chart, yearData, x, y);
+
+  // Update summary
+  d3.select("#summary")
+    .text(
+      yearData.length +
+      " countries shown | Year: " +
+      selectedYear
+    );
+}
+
+// SCENE 2: Annotations
+
+function drawScene2Annotations(chart, yearData, x, y) {
+
+  // Find countries with progression of at least 95%
+  var highEducationCountries = yearData.filter(function(d) {
+    return d.Progression >= 95;
+  });
+
+  // If filter is empty, use all countries
+  if (highEducationCountries.length === 0) {
+    highEducationCountries = yearData;
+  }
+
+  // Find the country with highest GDP in that group
+  var highExample = highEducationCountries.reduce(function(a, b) {
+    return a.GDP > b.GDP ? a : b;
+  });
+
+  // Draw line to the high example
+  chart.append("line")
+    .attr("x1", x(highExample.Progression))
+    .attr("y1", y(highExample.GDP))
+    .attr("x2", x(highExample.Progression) - 100)
+    .attr("y2", y(highExample.GDP) + 60)
+    .attr("stroke", "black");
+
+  // Add text for high example
+  chart.append("text")
+    .attr("class", "annotation")
+    .attr("x", x(highExample.Progression) - 280)
+    .attr("y", y(highExample.GDP) + 75)
+    .text(
+      highExample["Country Name"] +
+      " combines high progression with high GDP."
+    );
+
+  // Find countries with progression below 75%
+  var lowEducationCountries = yearData.filter(function(d) {
+    return d.Progression < 75;
+  });
+
+  if (lowEducationCountries.length > 0) {
+
+    // Find the lowest GDP country in that group
+    var lowExample = lowEducationCountries.reduce(function(a, b) {
+      return a.GDP < b.GDP ? a : b;
+    });
+
+    // Draw a line to the low example
+    chart.append("line")
+      .attr("x1", x(lowExample.Progression))
+      .attr("y1", y(lowExample.GDP))
+      .attr("x2", x(lowExample.Progression) - 80)
+      .attr("y2", y(lowExample.GDP) - 50)
+      .attr("stroke", "black");
+
+    // Add text for low example
+    chart.append("text")
+      .attr("class", "annotation")
+      .attr("x", x(lowExample.Progression) - 85)
+      .attr("y", y(lowExample.GDP) - 55)
+      .attr("text-anchor", "end")
+      .text(
+        lowExample["Country Name"] +
+        " has lower values for both measures."
+      );
+  }
+
+  // Add main narrative annotation
+  chart.append("text")
+    .attr("class", "annotation")
+    .attr("x", 180)
+    .attr("y", -50)
+    .text(
+      "The overall upward pattern suggests that countries with higher"
+    );
+
+  chart.append("text")
+    .attr("class", "annotation")
+    .attr("x", 180)
+    .attr("y", -32)
+    .text(
+      "school progression also tend to have higher GDP per capita."
+    );
+}
+
+// SCENE 2: Country Details
+
+function updateScene2CountryDetails(d) {
+
+  if (selectedCountry === null) {
+    d3.select("#countryDetails")
+      .text("Click a country to keep it highlighted.");
+  } else {
+    d3.select("#countryDetails")
+      .html(
+        "<b>" + d["Country Name"] + "</b><br>" +
+        "Secondary-school progression: " +
+        d.Progression.toFixed(1) + "%<br>" +
+        "GDP per capita: $" +
+        d3.format(",.0f")(d.GDP)
+      );
+  }
+}
+
+// SCENE 3: Scatterplot of Education and Slum Population
+
+function drawScene3() {
+
+  d3.select("#metricControls")
+    .style("display", "none");
+
+  currentScene = 3;
+
+  // Update text for Scene 3
+  d3.select("#title")
+    .text("Education and Living Conditions");
+
+  d3.select("#description")
+    .text(
+      "Each dot represents one country. Countries farther to the right " +
+      "have higher secondary-school progression. Countries higher on the " +
+      "chart have a larger percentage of their urban population living in slums."
+    );
+
+  d3.select("#sceneNumber")
+    .text("Scene 3 of 4");
+
+  d3.select("#previousButton")
+    .property("disabled", false);
+
+  d3.select("#nextButton")
+    .property("disabled", false)
+    .text("Next Scene");
+
+  // Filter data to the selected year
+  var yearData = scene3Data.filter(function(d) {
+    return d.Year === selectedYear;
+  });
+
+  // Filter to selected region
+  if (selectedRegion !== "All Regions") {
+    yearData = yearData.filter(function(d) {
+      return d.Region === selectedRegion;
+    });
+  }
+
+  // Clear old chart
+  d3.select("svg")
+    .selectAll("*")
+    .remove();
+
+  // Handle selections with no data
+  if (yearData.length === 0) {
+    // Update summary
+  d3.select("#summary")
+      .text(
+        "No countries have both education and slum population data " +
+        "for this year and region."
+      );
+
+    d3.select("#countryDetails")
+      .text("Try selecting another year or region.");
+
+    return;
+  }
+
+  // Set chart size
+  var width = 740;
+  var height = 450;
+
+  // Create the x scale for education
+  var x = d3.scaleLinear()
+    .domain([0, 105])
+    .range([0, width]);
+
+  // Create the y scale for slum population
+  var y = d3.scaleLinear()
+    .domain([0, 100])
+    .range([height, 0]);
+
+  // Create region colors
+  var regions = d3.set(
+    yearData.map(function(d) {
+      return d.Region;
+    })
+  ).values();
+
+  var color = d3.scaleOrdinal(d3.schemeDark2)
+    .domain(regions);
+
+  // Create chart group
+  var chart = d3.select("svg")
+    .append("g")
+    .attr("transform", "translate(150,90)");
+
+  // Create x-axis
+  var xAxis = d3.axisBottom(x)
+    .tickValues([0, 20, 40, 60, 80, 100])
+    .tickFormat(function(d) {
+      return d + "%";
+    });
+
+  chart.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .call(xAxis);
+
+  // Add x-axis label
+  chart.append("text")
+    .attr("x", width / 2)
+    .attr("y", height + 50)
+    .attr("text-anchor", "middle")
+    .text("Students progressing to secondary school");
+
+  // Create y-axis
+  var yAxis = d3.axisLeft(y)
+    .tickValues([0, 20, 40, 60, 80, 100])
+    .tickFormat(function(d) {
+      return d + "%";
+    });
+
+  chart.append("g")
+    .call(yAxis);
+
+  // Add y-axis label
+  chart.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("x", -height / 2)
+    .attr("y", -105)
+    .attr("text-anchor", "middle")
+    .text("Urban population living in slums");
+
+  // Add one circle for each country
+  chart.selectAll("circle")
+    .data(yearData)
+    .enter()
+    .append("circle")
+    .attr("cx", function(d) {
+      return x(d.Progression);
+    })
+    .attr("cy", function(d) {
+      return y(d.SlumPopulation);
+    })
+    .attr("r", function(d) {
+      if (d["Country Code"] === selectedCountry) {
+        return 9;
+      }
+      return 6;
+    })
+    .attr("fill", function(d) {
+      return color(d.Region);
+    })
+    .attr("opacity", function(d) {
+      if (
+        selectedCountry !== null &&
+        d["Country Code"] !== selectedCountry
+      ) {
+        return 0.25;
+      }
+      return 0.8;
+    })
+    .attr("stroke", function(d) {
+      if (d["Country Code"] === selectedCountry) {
+        return "black";
+      }
+      return "white";
+    })
+    .attr("stroke-width", function(d) {
+      if (d["Country Code"] === selectedCountry) {
+        return 3;
+      }
+      return 1;
+    })
+    // Trigger tooltip logic
+    .on("mouseover", function(d) {
+      d3.select("#tooltip")
+        .style("display", "block")
+        .html(
+          "<b>" + d["Country Name"] + "</b><br>" +
+          d.Region + "<br>" +
+          "Progression: " + d.Progression.toFixed(1) + "%<br>" +
+          "Population living in slums: " +
+          d.SlumPopulation.toFixed(1) + "%<br>" +
+          "Year: " + d.Year
+        );
+
+      d3.select(this)
+        .attr("r", 9)
+        .attr("stroke", "black")
+        .attr("stroke-width", 2);
+    })
+    .on("mousemove", function() {
+      d3.select("#tooltip")
+        .style("left", (d3.event.pageX + 10) + "px")
+        .style("top", (d3.event.pageY + 10) + "px");
+    })
+    .on("mouseout", function(d) {
+      d3.select("#tooltip")
+        .style("display", "none");
+
+      if (d["Country Code"] !== selectedCountry) {
+        d3.select(this)
+          .attr("r", 6)
+          .attr("stroke", "white")
+          .attr("stroke-width", 1);
+      }
+    })
+    // Country click trigger logic
+    .on("click", function(d) {
+      if (selectedCountry === d["Country Code"]) {
+        selectedCountry = null;
+      } else {
+        selectedCountry = d["Country Code"];
+      }
+
+      updateScene3CountryDetails(d);
+      drawScene3();
+    });
+
+  // Add permanent annotations
+  drawScene3Annotations(chart, yearData, x, y);
+
+  d3.select("#summary")
+    .text(
+      yearData.length +
+      " countries shown | Year: " +
+      selectedYear
+    );
+}
+
+// SCENE 3: Annotations
+
+function drawScene3Annotations(chart, yearData, x, y) {
+
+  // Find countries with high progression and low slum populations
+  var betterConditions = yearData.filter(function(d) {
+    return d.Progression >= 90 && d.SlumPopulation <= 20;
+  });
+
+  if (betterConditions.length > 0) {
+
+    // Use the first matching country as a positive example
+    var goodExample = betterConditions[0];
+
+    // Draw line to the positive example
+    chart.append("line")
+      .attr("x1", x(goodExample.Progression))
+      .attr("y1", y(goodExample.SlumPopulation))
+      .attr("x2", x(goodExample.Progression) - 110)
+      .attr("y2", y(goodExample.SlumPopulation) - 55)
+      .attr("stroke", "black");
+
+    // Add text for the positive example
+    chart.append("text")
+      .attr("class", "annotation")
+      .attr("x", x(goodExample.Progression) - 300)
+      .attr("y", y(goodExample.SlumPopulation) - 60)
+      .text(
+        goodExample["Country Name"] +
+        " has high progression and a low slum percentage."
+      );
+  }
+
+  // Find countries with lower progression and higher slum populations
+  var challengingConditions = yearData.filter(function(d) {
+    return d.Progression < 80 && d.SlumPopulation >= 40;
+  });
+
+  if (challengingConditions.length > 0) {
+
+    // Use the first matching country as a challenging example
+    var challengeExample = challengingConditions[0];
+
+    // Draw line to the challenging example
+    chart.append("line")
+      .attr("x1", x(challengeExample.Progression))
+      .attr("y1", y(challengeExample.SlumPopulation))
+      .attr("x2", x(challengeExample.Progression) + 90)
+      .attr("y2", y(challengeExample.SlumPopulation) + 55)
+      .attr("stroke", "black");
+
+    // Add text for the challenging example
+    chart.append("text")
+      .attr("class", "annotation")
+      .attr("x", x(challengeExample.Progression) + 95)
+      .attr("y", y(challengeExample.SlumPopulation) + 60)
+      .text(
+        challengeExample["Country Name"] +
+        " faces challenges in both measures."
+      );
+  }
+
+  // Add main narrative annotation
+  chart.append("text")
+    .attr("class", "annotation")
+    .attr("x", 175)
+    .attr("y", -50)
+    .text(
+      "The overall downward pattern suggests that higher school"
+    );
+
+  chart.append("text")
+    .attr("class", "annotation")
+    .attr("x", 175)
+    .attr("y", -32)
+    .text(
+      "progression is often associated with lower slum populations."
+    );
+}
+
+// SCENE 3: Country Details
+
+function updateScene3CountryDetails(d) {
+
+  if (selectedCountry === null) {
+    d3.select("#countryDetails")
+      .text("Click a country to keep it highlighted.");
+  } else {
+    d3.select("#countryDetails")
+      .html(
+        "<b>" + d["Country Name"] + "</b><br>" +
+        "Secondary-school progression: " +
+        d.Progression.toFixed(1) + "%<br>" +
+        "Urban population living in slums: " +
+        d.SlumPopulation.toFixed(1) + "%"
+      );
+  }
+}
+
+// SCENE 4: Free User Exploration
+
+function drawScene4() {
+
+  currentScene = 4;
+
+  // Show the extra metric dropdown only in Scene 4
+  d3.select("#metricControls")
+    .style("display", "inline");
+
+  d3.select("#metricSelect")
+    .property("value", selectedMetric);
+
+  d3.select("#title")
+    .text("Explore the Relationship for Yourself");
+
+  d3.select("#description")
+    .text(
+      "Choose an outcome from the new dropdown and explore how it relates " +
+      "to secondary-school progression. Hover over or click any country for details."
+    );
+
+  d3.select("#sceneNumber")
+    .text("Scene 4 of 4");
+
+  d3.select("#previousButton")
+    .property("disabled", false);
+
+  d3.select("#nextButton")
+    .property("disabled", true)
+    .text("End of Story");
+
+  // Filter to selected year and metric
+  var yearData = scene4Data.filter(function(d) {
+    return d.Year === selectedYear &&
+           d.Metric === selectedMetric;
+  });
+
+  // Filter to selected region
+  if (selectedRegion !== "All Regions") {
+    yearData = yearData.filter(function(d) {
+      return d.Region === selectedRegion;
+    });
+  }
+
+  // Clear previous chart
+  d3.select("svg")
+    .selectAll("*")
+    .remove();
+
+  if (yearData.length === 0) {
+
+    d3.select("#summary")
+      .text("No matching data is available. Try another year, region, or outcome.");
+
+    d3.select("#countryDetails")
+      .text("Use the controls above to make another selection.");
+
+    return;
+  }
+
+  var width = 740;
+  var height = 450;
+
+  // Education is always shown on x-axis
+  var x = d3.scaleLinear()
+    .domain([0, 105])
+    .range([0, width]);
+
+  var y;
+  var yAxis;
+  var yLabel;
+
+  // Logarithmic scale because GDP values vary
+  if (selectedMetric === "GDP per capita") {
+
+    var lowestValue = d3.min(yearData, function(d) {
+      return d.Value;
+    });
+
+    var highestValue = d3.max(yearData, function(d) {
+      return d.Value;
+    });
+
+    y = d3.scaleLog()
+      .domain([lowestValue * 0.8, highestValue * 1.2])
+      .range([height, 0]);
+
+    yAxis = d3.axisLeft(y)
+      .ticks(6)
+      .tickFormat(function(d) {
+        return "$" + d3.format(",")(d);
+      });
+
+    yLabel = "GDP per capita (constant 2015 US$)";
+
+  } else {
+
+    var highestPercent = d3.max(yearData, function(d) {
+      return d.Value;
+    });
+
+    var yMaximum = Math.max(20, Math.ceil(highestPercent / 10) * 10);
+
+    y = d3.scaleLinear()
+      .domain([0, yMaximum])
+      .range([height, 0]);
+
+    yAxis = d3.axisLeft(y)
+      .ticks(6)
+      .tickFormat(function(d) {
+        return d + "%";
+      });
+
+    if (selectedMetric === "Population living in slums") {
+      yLabel = "Urban population living in slums";
+    }
+
+    if (selectedMetric === "Unemployment") {
+      yLabel = "Unemployment rate";
+    }
+
+    if (selectedMetric === "Poverty") {
+      yLabel = "Population living below $3.00 per day";
+    }
+  }
+
+  var regions = d3.set(
+    yearData.map(function(d) {
+      return d.Region;
+    })
+  ).values();
+
+  var color = d3.scaleOrdinal(d3.schemeDark2)
+    .domain(regions);
+
+  var chart = d3.select("svg")
+    .append("g")
+    .attr("transform", "translate(150,90)");
+
+  var xAxis = d3.axisBottom(x)
+    .tickValues([0, 20, 40, 60, 80, 100])
+    .tickFormat(function(d) {
+      return d + "%";
+    });
+
+  chart.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .call(xAxis);
+
+  chart.append("text")
+    .attr("x", width / 2)
+    .attr("y", height + 50)
+    .attr("text-anchor", "middle")
+    .text("Students progressing to secondary school");
+
+  chart.append("g")
+    .call(yAxis);
+
+  chart.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("x", -height / 2)
+    .attr("y", -105)
+    .attr("text-anchor", "middle")
+    .text(yLabel);
+
+  chart.selectAll("circle")
+    .data(yearData)
+    .enter()
+    .append("circle")
+    .attr("cx", function(d) {
+      return x(d.Progression);
+    })
+    .attr("cy", function(d) {
+      return y(d.Value);
+    })
+    .attr("r", function(d) {
+
+      if (d["Country Code"] === selectedCountry) {
+        return 9;
+      }
+
+      return 6;
+    })
+    .attr("fill", function(d) {
+      return color(d.Region);
+    })
+    .attr("opacity", function(d) {
+
+      if (
+        selectedCountry !== null &&
+        d["Country Code"] !== selectedCountry
+      ) {
+        return 0.25;
+      }
+
+      return 0.8;
+    })
+    .attr("stroke", function(d) {
+
+      if (d["Country Code"] === selectedCountry) {
+        return "black";
+      }
+
+      return "white";
+    })
+    .attr("stroke-width", function(d) {
+
+      if (d["Country Code"] === selectedCountry) {
+        return 3;
+      }
+
+      return 1;
+    })
+
+    // Trigger tooltip logic
+    .on("mouseover", function(d) {
+
+      var valueText;
+
+      if (selectedMetric === "GDP per capita") {
+        valueText = "$" + d3.format(",.0f")(d.Value);
+      } else {
+        valueText = d.Value.toFixed(1) + "%";
+      }
+
+      d3.select("#tooltip")
+        .style("display", "block")
+        .html(
+          "<b>" + d["Country Name"] + "</b><br>" +
+          d.Region + "<br>" +
+          "Progression: " + d.Progression.toFixed(1) + "%<br>" +
+          selectedMetric + ": " + valueText + "<br>" +
+          "Year: " + d.Year
+        );
+
+      d3.select(this)
+        .attr("r", 9)
+        .attr("stroke", "black")
+        .attr("stroke-width", 2);
+    })
+
+    .on("mousemove", function() {
+
+      d3.select("#tooltip")
+        .style("left", (d3.event.pageX + 10) + "px")
+        .style("top", (d3.event.pageY + 10) + "px");
+    })
+
+    .on("mouseout", function(d) {
+
+      d3.select("#tooltip")
+        .style("display", "none");
+
+      if (d["Country Code"] !== selectedCountry) {
+        d3.select(this)
+          .attr("r", 6)
+          .attr("stroke", "white")
+          .attr("stroke-width", 1);
+      }
+    })
+
+    // Country click trigger logic
+    .on("click", function(d) {
+
+      if (selectedCountry === d["Country Code"]) {
+        selectedCountry = null;
+      } else {
+        selectedCountry = d["Country Code"];
+      }
+
+      updateScene4CountryDetails(d);
+      drawScene4();
+    });
+
+  drawScene4Annotations(chart);
+
+  d3.select("#summary")
+    .text(
+      yearData.length +
+      " countries shown | Outcome: " +
+      selectedMetric +
+      " | Year: " +
+      selectedYear
+    );
+}
+
+// SCENE 4: Annotations
+
+function drawScene4Annotations(chart) {
+
+  chart.append("text")
+    .attr("class", "annotation")
+    .attr("x", 160)
+    .attr("y", -50)
+    .text(
+      "Use the outcome dropdown to compare several possible relationships."
+    );
+
+  chart.append("text")
+    .attr("class", "annotation")
+    .attr("x", 160)
+    .attr("y", -32)
+    .text(
+      "Look for patterns, exceptions, and differences between regions."
+    );
+}
+
+// SCENE 4: Country Details
+
+function updateScene4CountryDetails(d) {
+
+  if (selectedCountry === null) {
+
+    d3.select("#countryDetails")
+      .text("Click a country to keep it highlighted.");
+
+  } else {
+
+    var valueText;
+
+    if (selectedMetric === "GDP per capita") {
+      valueText = "$" + d3.format(",.0f")(d.Value);
+    } else {
+      valueText = d.Value.toFixed(1) + "%";
+    }
+
+    d3.select("#countryDetails")
+      .html(
+        "<b>" + d["Country Name"] + "</b><br>" +
+        "Secondary-school progression: " +
+        d.Progression.toFixed(1) + "%<br>" +
+        selectedMetric + ": " + valueText
+      );
+  }
+}
+
+// Draw current scene
+
+function drawCurrentScene() {
+
+  if (currentScene === 1) {
+    drawScene1();
+  }
+
+  if (currentScene === 2) {
+    drawScene2();
+  }
+
+  if (currentScene === 3) {
+    drawScene3();
+  }
+
+  if (currentScene === 4) {
+    drawScene4();
+  }
+}
+
+// TRIGGERS: connect user actions to appropriate functions
+
+function createTriggers() {
+
+  // Trigger year dropdown logic
+  d3.select("#yearSelect")
+    .on("change", function() {
+
+      selectedYear = +this.value;
+      selectedCountry = null;
+
+      d3.select("#countryDetails")
+        .text("Click a country to keep it highlighted.");
+
+      drawCurrentScene();
+    });
+
+  // Trigger region dropdown logic
+  d3.select("#regionSelect")
+    .on("change", function() {
+
+      selectedRegion = this.value;
+      selectedCountry = null;
+
+      d3.select("#countryDetails")
+        .text("Click a country to keep it highlighted.");
+
+      drawCurrentScene();
+    });
+
+  // Trigger metric dropdown logic
+  d3.select("#metricSelect")
+    .on("change", function() {
+
+      selectedMetric = this.value;
+      selectedCountry = null;
+
+      d3.select("#countryDetails")
+        .text("Click a country to keep it highlighted.");
+
+      drawScene4();
+    });
+
+  // Trigger reset button logic
+  d3.select("#resetButton")
+    .on("click", function() {
+
+      selectedYear = 2012;
+      selectedRegion = "All Regions";
+      selectedCountry = null;
+      selectedMetric = "GDP per capita";
+
+      d3.select("#yearSelect")
+        .property("value", selectedYear);
+
+      d3.select("#regionSelect")
+        .property("value", selectedRegion);
+
+      d3.select("#metricSelect")
+        .property("value", selectedMetric);
+
+      d3.select("#countryDetails")
+        .text("Click a country to keep it highlighted.");
+
+      drawCurrentScene();
+    });
+
+  // Trigger next button logic
+  d3.select("#nextButton")
+    .on("click", function() {
+
+      if (currentScene === 1) {
+        currentScene = 2;
+        selectedCountry = null;
+
+        d3.select("#countryDetails")
+          .text("Click a country to keep it highlighted.");
+
+        drawScene2();
+      } else if (currentScene === 2) {
+        currentScene = 3;
+        selectedCountry = null;
+
+        d3.select("#countryDetails")
+          .text("Click a country to keep it highlighted.");
+
+        drawScene3();
+      } else if (currentScene === 3) {
+        currentScene = 4;
+        selectedCountry = null;
+
+        d3.select("#countryDetails")
+          .text("Click a country to keep it highlighted.");
+
+        drawScene4();
+      }
+    });
+
+  // Trigger previous button logic
+  d3.select("#previousButton")
+    .on("click", function() {
+
+      if (currentScene === 2) {
+        currentScene = 1;
+        selectedCountry = null;
+
+        d3.select("#countryDetails")
+          .text("Click a country to keep it highlighted.");
+
+        drawScene1();
+      } else if (currentScene === 3) {
+        currentScene = 2;
+        selectedCountry = null;
+
+        d3.select("#countryDetails")
+          .text("Click a country to keep it highlighted.");
+
+        drawScene2();
+      } else if (currentScene === 4) {
+        currentScene = 3;
+        selectedCountry = null;
+
+        d3.select("#countryDetails")
+          .text("Click a country to keep it highlighted.");
+
+        drawScene3();
+      }
+    });
+}
+
+</script>
+</body>
+</html>
