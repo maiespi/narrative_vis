@@ -6,10 +6,6 @@ This visualization explores how **secondary-school progression** relates to a co
 
 The story is presented through four scenes that gradually build on one another. It begins by introducing differences in educational opportunity across countries, then examines how education is associated with GDP per capita and the percentage of people living in urban slums. These relationships are presented as **associations rather than evidence of causation**. The final scene allows viewers to explore additional development indicators themselves, encouraging them to identify patterns and exceptions within the data.
 
----
-
-# Scene Guide
-
 ## Scene 1 – Educational Opportunity Around the World
 
 **Question:**  
@@ -23,8 +19,6 @@ This introductory scene displays a dot plot showing the percentage of students p
 - Hover over a country to view its exact values.
 - Click a country to keep it highlighted.
 - Click **Next Scene** to continue the narrative.
-
----
 
 ## Scene 2 – Education and Economic Prosperity
 
@@ -40,8 +34,6 @@ This scatterplot compares educational progression with GDP per capita. As countr
 - Click a country to highlight it.
 - Use the **Next** and **Previous** buttons to move between scenes.
 
----
-
 ## Scene 3 – Education and Living Conditions
 
 **Question:**  
@@ -55,8 +47,6 @@ This scatterplot compares educational progression with the percentage of the urb
 - Hover over countries to view their values.
 - Click a country to highlight it.
 - Continue using the **Next** and **Previous** buttons to navigate.
-
----
 
 ## Scene 4 – Explore the Relationship Yourself
 
