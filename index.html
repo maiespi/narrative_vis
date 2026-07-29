@@ -42,8 +42,9 @@
 <h1 id="title">Educational Opportunity Around the World</h1>
 
 <p id="description">
-  Each dot represents one country. The further right a dot appears on the dot plot,
-  the larger the percentage of students who progress to secondary school.
+  Not every country provides the same opportunities for students to continue 
+  into secondary school. Let's begin by exploring how educational progression 
+  varies across the world.
 </p>
 
 <label>Year:</label>
@@ -213,8 +214,9 @@ function drawScene1() {
 
   d3.select("#description")
     .text(
-      "Each dot represents one country. The further right a dot appears on the dot plot, " +
-      "the larger the percentage of students who progress to secondary school."
+      "Not every country provides the same opportunities for students to continue " +
+      "into secondary school. Let's begin by exploring how educational progression " +
+      "varies across the world."
     );
 
   d3.select("#sceneNumber")
@@ -566,13 +568,13 @@ function drawScene2() {
 
   // Update text for Scene 2
   d3.select("#title")
-    .text("Education and Economic Prosperity");
+    .text("Does More Education Coincide with Greater Prosperity?");
 
   d3.select("#description")
     .text(
-      "Each dot represents one country. Countries farther to the right " +
-      "have higher secondary-school progression, while countries higher " +
-      "on the chart have greater GDP per capita."
+      "Countries with higher rates of secondary-school progression often " +
+      "also have higher GDP per capita. Explore the relationship between " +
+      "education and economic prosperity."
     );
 
   d3.select("#sceneNumber")
@@ -918,13 +920,13 @@ function drawScene3() {
 
   // Update text for Scene 3
   d3.select("#title")
-    .text("Education and Living Conditions");
+    .text("Does Education Relate to Better Living Conditions?");
 
   d3.select("#description")
     .text(
-      "Each dot represents one country. Countries farther to the right " +
-      "have higher secondary-school progression. Countries higher on the " +
-      "chart have a larger percentage of their urban population living in slums."
+      "Countries with higher educational progression also tend to have " +
+      "lower percentages of people living in urban slums. Explore how " +
+      "education relates to quality of life."
     );
 
   d3.select("#sceneNumber")
@@ -1245,12 +1247,13 @@ function drawScene4() {
     .property("value", selectedMetric);
 
   d3.select("#title")
-    .text("Explore the Relationship for Yourself");
+    .text("Continue Exploring the Data");
 
   d3.select("#description")
     .text(
-      "Choose an outcome from the new dropdown and explore how it relates " +
-      "to secondary-school progression. Hover over or click any country for details."
+      "Education is connected to many aspects of development. " +
+      "Compare additional indicators and investigate the patterns " +
+      "for yourself."
     );
 
   d3.select("#sceneNumber")
